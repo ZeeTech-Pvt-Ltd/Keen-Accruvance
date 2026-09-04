@@ -5,7 +5,7 @@ export default function Logo({ tone = 'dark', className = '' }) {
 
   return (
     <a
-      href="#home"
+      href="/"
       aria-label="Keen Accruvance — home"
       className={`group inline-flex items-center gap-2.5 ${className}`}
     >

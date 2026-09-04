@@ -35,7 +35,7 @@ export default function NotFoundPage() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Button href="/home" arrow>
+            <Button href="/" arrow>
               <Home size={17} aria-hidden="true" />
               Back to homepage
             </Button>

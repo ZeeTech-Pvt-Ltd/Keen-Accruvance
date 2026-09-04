@@ -4,7 +4,7 @@ import Logo from './Logo.jsx'
 import Button from './Button.jsx'
 
 const LINKS = [
-  { label: 'Home', href: '/home' },
+  { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'Why Invest', href: '/why-invest' },

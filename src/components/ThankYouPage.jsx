@@ -74,7 +74,7 @@ export default function ThankYouPage() {
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <Button href="/home">Back to homepage</Button>
+              <Button href="/">Back to homepage</Button>
               <Button href="/how-it-works" variant="ghost">
                 See how it works
               </Button>
