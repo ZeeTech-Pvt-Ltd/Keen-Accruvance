@@ -18,6 +18,7 @@ export default function SignupPage() {
       </div>
 
       <div className="relative flex min-h-screen flex-col items-center justify-center px-5 py-12 sm:py-16">
+        <h1 className="sr-only">Create your free demo account</h1>
         <Logo />
 
         <div className="mt-8 w-full max-w-md">

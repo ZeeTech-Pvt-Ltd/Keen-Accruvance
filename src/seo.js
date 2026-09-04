@@ -74,21 +74,27 @@ const ROUTE_SEO = {
     description:
       'Nothing on this site is financial advice. Read the Keen Accruvance disclaimer on demo data, past performance and your responsibility.',
   },
+  '/thank-you': {
+    title: 'Thank You | Keen Accruvance',
+    description:
+      'Your details were received. Here is what happens next with your Keen Accruvance demo account.',
+  },
 }
 
-/* Homepage sections exposed as clean URLs. They render the full homepage DOM,
-   so they are folded into "/" via canonical rather than treated as pages. */
-const HOME_SECTIONS = new Set([
-  'home',
-  'signup',
-  'how-it-works',
-  'why-invest',
-  'resources',
-  'security',
-  'testimonials',
-  'features',
-  'faq',
-  'cta',
+/* Homepage-section deep-links that render the FULL homepage DOM (not distinct
+   pages) — e.g. /how-it-works scrolls to that section of the homepage. They are
+   folded into "/" via canonical so they never compete as near-duplicates.
+   NB "/signup" is a real standalone page, so it is deliberately NOT here. */
+const FOLD_TO_HOME = new Set([
+  '/home',
+  '/how-it-works',
+  '/why-invest',
+  '/resources',
+  '/security',
+  '/testimonials',
+  '/features',
+  '/faq',
+  '/cta',
 ])
 
 /* Session / post-conversion pages that must never be indexed. */
@@ -194,8 +200,8 @@ function syncFaqSchema(isHome) {
 
 export function applyRouteSeo(path) {
   const key = ROUTE_SEO[path]
-  const isHomeSection = !key && HOME_SECTIONS.has(path.replace(/^\//, ''))
-  const cfg = key || (isHomeSection ? ROUTE_SEO['/'] : null)
+  const foldsHome = FOLD_TO_HOME.has(path)
+  const cfg = key || (foldsHome ? ROUTE_SEO['/'] : null)
 
   /* Unknown path → client-side "not found"; keep it out of the index. */
   if (!cfg) {
@@ -210,9 +216,9 @@ export function applyRouteSeo(path) {
   upsertMeta('robots', NOINDEX.includes(path) ? 'noindex, follow' : 'index, follow')
 
   /* Homepage-section deep-links fold into "/"; real pages point to themselves. */
-  const canonical = SITE + (isHomeSection ? '/' : path)
+  const canonical = SITE + (foldsHome ? '/' : path)
   upsertLink('canonical', canonical)
   upsertOg('og:url', canonical)
 
-  syncFaqSchema(path === '/' || isHomeSection)
+  syncFaqSchema(path === '/' || foldsHome)
 }
