@@ -8,9 +8,9 @@ const PERKS = [
   'Full demo view — explore the platform before you ever fund it',
 ]
 
-export default function SignupForm() {
+export default function SignupForm({ sectionId = 'signup' }) {
   return (
-    <section id="signup" className="relative mt-28 scroll-mt-24 lg:mt-36">
+    <section id={sectionId} className="relative mt-28 scroll-mt-24 lg:mt-36">
       {/* décor */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute left-[-10rem] top-10 size-[28rem] rounded-full bg-[radial-gradient(closest-side,rgba(255,240,232,0.7),transparent)] blur-2xl" />

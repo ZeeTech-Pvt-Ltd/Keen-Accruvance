@@ -204,7 +204,7 @@ export default function LeadForm({
         aria-hidden="true"
         className="absolute -inset-3 -z-10 rounded-[2rem] bg-gradient-to-br from-mint/70 via-transparent to-peach/80 blur-xl"
       />
-      <div className="rounded-[1.7rem] border border-ink/[0.06] bg-paper p-7 shadow-card sm:p-9">
+      <div className="rounded-[1.7rem] border border-ink/[0.06] bg-paper p-4 shadow-card sm:p-9">
         <form onSubmit={handleSubmit} noValidate>
           <p className="flex items-center justify-between">
             <span className="font-display text-xl font-semibold text-ink">{heading}</span>

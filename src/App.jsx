@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { applyRouteSeo } from './seo.js'
 import Navbar from './components/Navbar.jsx'
 import Ticker from './components/Ticker.jsx'
 import Hero from './components/Hero.jsx'
@@ -56,7 +57,10 @@ const HOME_SECTIONS = new Set([
 ])
 
 function currentPath() {
-  return window.location.pathname || '/'
+  /* Normalise "/privacy/" → "/privacy" so trailing-slash variants resolve
+     to the same route instead of a soft 404. */
+  const p = window.location.pathname || '/'
+  return p.length > 1 && p.endsWith('/') ? p.slice(0, -1) : p
 }
 
 export default function App() {
@@ -145,9 +149,10 @@ export default function App() {
     }
   }, [])
 
-  /* Scroll when the URL path changes */
+  /* Scroll + update the page <title>/<meta> whenever the URL path changes */
   useEffect(() => {
     scrollForPath(path)
+    applyRouteSeo(path)
   }, [path])
 
   /* Legacy "#/..." or "#section" bookmarks on first paint */
@@ -188,12 +193,12 @@ export default function App() {
             <Hero />
             <Ticker />
             <Stats />
-            <About />
             <SignupForm />
             <Features />
             <DashboardShowcase />
-            <WhyKeen />
             <HowItWorks />
+            <About />
+            <WhyKeen />
             <Security />
             <Testimonials />
             <Faq />

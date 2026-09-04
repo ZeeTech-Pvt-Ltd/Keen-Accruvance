@@ -9,6 +9,7 @@ import {
   ArrowDownRight,
 } from 'lucide-react'
 import SectionHeading from './SectionHeading.jsx'
+import Button from './Button.jsx'
 import Reveal from './Reveal.jsx'
 import { Spark, SparkMini, Bars, seriesTrendUp, sparkBtc, sparkEth, sparkSol, barsPnl } from './charts.jsx'
 
@@ -204,8 +205,8 @@ function BrowserWindow() {
                 <h3 className="font-sans text-[0.95rem] font-semibold text-ink">Market overview</h3>
                 <p className="text-[0.76rem] text-ink-muted">Live prices with AI signal rating</p>
               </div>
-              <span className="hidden rounded-full bg-forest/8 px-3 py-1.5 text-[0.7rem] font-semibold text-forest sm:block">
-                See all markets →
+              <span className="hidden rounded-full bg-cream-deep px-3 py-1.5 text-[0.7rem] font-medium text-ink-muted sm:block">
+                Demo data
               </span>
             </div>
             <div className="mt-2 divide-y divide-ink/[0.04]">
@@ -256,6 +257,17 @@ export default function DashboardShowcase() {
 
         <Reveal delay={120} className="mt-14">
           <BrowserWindow />
+        </Reveal>
+
+        <Reveal delay={200}>
+          <div className="mt-12 flex flex-col items-center justify-center gap-4 text-center sm:flex-row sm:gap-5">
+            <Button href="/signup" size="lg" arrow>
+              Open your free demo account
+            </Button>
+            <Button href="/how-it-works" size="lg" variant="outline">
+              See how it works
+            </Button>
+          </div>
         </Reveal>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import { ArrowRight, UserPlus, SlidersHorizontal, MonitorCog, Check } from 'lucide-react'
 import SectionHeading from './SectionHeading.jsx'
+import Button from './Button.jsx'
 import Reveal from './Reveal.jsx'
 
 const STEPS = [
@@ -89,6 +90,17 @@ export default function HowItWorks() {
             </Fragment>
           ))}
         </div>
+
+        <Reveal delay={120} className="mt-14">
+          <div className="flex flex-col items-center text-center">
+            <Button href="/signup" size="lg" arrow>
+              Create your free account
+            </Button>
+            <p className="mt-4 text-[0.85rem] text-ink-muted">
+              Starts with a demo — no card, no funding required to explore.
+            </p>
+          </div>
+        </Reveal>
       </div>
     </section>
   )

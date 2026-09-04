@@ -85,6 +85,9 @@ export default function Stats() {
             ))}
           </dl>
         </Reveal>
+        <p className="mt-4 text-center font-mono text-[0.62rem] uppercase tracking-[0.16em] text-ink-muted/60">
+          Illustrative platform figures shown for demonstration
+        </p>
       </div>
     </section>
   )
