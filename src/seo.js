@@ -14,7 +14,7 @@ const ROUTE_SEO = {
   '/': {
     title: 'Keen Accruvance | AI-Powered Crypto Trading Platform & Signals',
     description:
-      'Explore Keen Accruvance — an AI-powered trading platform with real-time market intelligence, automated strategies and layered security. Open your free demo account today.',
+      'AI-powered trading platform with real-time market intelligence, automated strategies and layered security. Explore Keen Accruvance with a free demo.',
   },
   '/about': {
     title: 'About Keen Accruvance | The Team Behind the AI Platform',
