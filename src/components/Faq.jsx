@@ -6,7 +6,7 @@ import Reveal from './Reveal.jsx'
 const FAQS = [
   {
     q: 'What is Keen Accruvance?',
-    a: 'Keen Accruvance is an AI-powered trading platform that combines automated strategies, real-time market intelligence and security-focused infrastructure in one interface. It is designed to help people follow the markets with more context — not to guarantee returns.',
+    a: 'Keen Accruvance is an AI-powered trading platform that combines automated strategies, real-time market intelligence and security-focused infrastructure in one interface. It is designed to help people follow the markets with more context - not to guarantee returns.',
   },
   {
     q: 'Do I need prior trading experience?',
@@ -14,7 +14,7 @@ const FAQS = [
   },
   {
     q: 'How do the AI signals work?',
-    a: 'Our models process market data such as price action, volume and momentum to produce signal ratings with readable reasoning. Signals are informational tools to support your own decisions — they are not financial advice and never a promise of profit.',
+    a: 'Our models process market data such as price action, volume and momentum to produce signal ratings with readable reasoning. Signals are informational tools to support your own decisions - they are not financial advice and never a promise of profit.',
   },
   {
     q: 'How is my account and data protected?',
@@ -22,7 +22,7 @@ const FAQS = [
   },
   {
     q: 'Can I pause or stop automated strategies?',
-    a: 'Yes — you are always in control. Any automated strategy can be paused, adjusted or stopped from the dashboard at any time, and your configured risk limits are respected by the execution engine throughout.',
+    a: 'Yes - you are always in control. Any automated strategy can be paused, adjusted or stopped from the dashboard at any time, and your configured risk limits are respected by the execution engine throughout.',
   },
   {
     q: 'Which markets and assets can I follow?',
@@ -99,7 +99,7 @@ export default function Faq() {
                 >
                   Contact our support team
                 </a>{' '}
-                — we reply within a day.
+                - we reply within a day.
               </p>
             </div>
           </Reveal>

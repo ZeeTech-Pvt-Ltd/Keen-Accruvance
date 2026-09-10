@@ -6,7 +6,7 @@ const STATS = [
   { icon: Users, count: 4, suffix: 'M+', decimals: 0, label: 'Registered users', note: 'across global markets' },
   { icon: Globe2, count: 98, suffix: '+', decimals: 0, label: 'Countries reached', note: 'and growing monthly' },
   { icon: Wallet, count: 500, prefix: '$', suffix: 'M+', decimals: 0, label: 'Customer deposits', note: 'since platform launch' },
-  { icon: Clock3, count: 24, suffix: '/7', decimals: 0, label: 'Trading access', note: 'markets move — so do we' },
+  { icon: Clock3, count: 24, suffix: '/7', decimals: 0, label: 'Trading access', note: 'markets move - so do we' },
 ]
 
 function CountUp({ end, prefix = '', suffix = '', decimals = 0, duration = 1400 }) {

@@ -3,7 +3,7 @@ const SECTIONS = [
     n: '01',
     title: 'What are cookies',
     body: [
-      'A cookie is a small text file stored on your device when you visit a website. It lets the site recognise your browser and remember information between visits — such as your preferences or whether you are signed in.',
+      'A cookie is a small text file stored on your device when you visit a website. It lets the site recognise your browser and remember information between visits - such as your preferences or whether you are signed in.',
       'We also use similar technologies such as local storage and analytics pixels for the same kinds of purposes described in this policy. Where we say “cookies” below, we mean all of these.',
     ],
   },
@@ -11,9 +11,9 @@ const SECTIONS = [
     n: '02',
     title: 'The cookies we use',
     body: [
-      'Essential cookies — required for the site to function, such as keeping your session secure and remembering basic preferences. These cannot be switched off.',
-      'Preference cookies — remember choices you make, such as language, region and display settings, so you don’t have to set them again on every visit.',
-      'Analytics cookies — help us understand which pages are visited, how long people stay and where they drop off, so we can improve the experience. They are aggregated and do not identify you personally.',
+      'Essential cookies - required for the site to function, such as keeping your session secure and remembering basic preferences. These cannot be switched off.',
+      'Preference cookies - remember choices you make, such as language, region and display settings, so you don’t have to set them again on every visit.',
+      'Analytics cookies - help us understand which pages are visited, how long people stay and where they drop off, so we can improve the experience. They are aggregated and do not identify you personally.',
     ],
   },
   {
@@ -30,7 +30,7 @@ const SECTIONS = [
     n: '04',
     title: 'Third-party cookies',
     body: [
-      'Some of the tools we rely on — such as analytics and infrastructure providers — may set their own cookies or similar technologies when you use the site.',
+      'Some of the tools we rely on - such as analytics and infrastructure providers - may set their own cookies or similar technologies when you use the site.',
       <span key="privacy-link">
         These providers use the data they collect only to provide services to us, and are bound by
         confidentiality and data-protection obligations. For more detail on how your information is

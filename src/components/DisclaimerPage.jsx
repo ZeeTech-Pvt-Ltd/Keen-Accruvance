@@ -17,14 +17,14 @@ const SECTIONS = [
     n: '03',
     title: 'No guarantee of returns',
     body: [
-      'No tool, signal or strategy can guarantee profits or protect against losses. Any figures, back-tests, illustrations or percentage returns shown on this site are examples for explanation only — they are not promises or predictions of what you will earn.',
+      'No tool, signal or strategy can guarantee profits or protect against losses. Any figures, back-tests, illustrations or percentage returns shown on this site are examples for explanation only - they are not promises or predictions of what you will earn.',
     ],
   },
   {
     n: '04',
     title: 'Demo accounts and sample data',
     body: [
-      'Demo and practice accounts use simulated funds and market data. Because no real money is at stake and execution is simulated, they are for learning only — results in a live account will differ, often significantly.',
+      'Demo and practice accounts use simulated funds and market data. Because no real money is at stake and execution is simulated, they are for learning only - results in a live account will differ, often significantly.',
     ],
   },
   {
@@ -68,8 +68,8 @@ export default function DisclaimerPage() {
         </p>
         <p className="text-pretty mt-6 text-base leading-relaxed text-ink-muted">
           Keen Accruvance provides AI-assisted trading technology, market tools and educational
-          content. Nothing on this website — including any page, tool, signal or automated strategy
-          — is financial, investment, legal or tax advice. Please read this Disclaimer together
+          content. Nothing on this website - including any page, tool, signal or automated strategy
+          - is financial, investment, legal or tax advice. Please read this Disclaimer together
           with our{' '}
           <a href="/terms" className="font-medium text-forest underline decoration-forest/30 underline-offset-2 hover:decoration-forest">
             Terms &amp; Conditions

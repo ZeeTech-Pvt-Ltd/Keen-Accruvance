@@ -39,7 +39,7 @@ const PAGES = {
   '/thank-you': ThankYouPage,
 }
 
-/* Pages that render bare — no Navbar/Footer chrome, only their own layout */
+/* Pages that render bare - no Navbar/Footer chrome, only their own layout */
 const BARE_ROUTES = new Set(['/signup'])
 
 /* Homepage sections exposed as clean URLs, e.g. keen-accruvance.com/how-it-works */
@@ -80,7 +80,7 @@ export default function App() {
 
   useEffect(() => {
     /* Intercept internal links so navigation is instant and URLs stay clean
-       (no "#hash" fragments) — /faq, /signup, /how-it-works, etc. */
+       (no "#hash" fragments) - /faq, /signup, /how-it-works, etc. */
     function onClick(e) {
       if (e.defaultPrevented || e.button !== 0) return
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return

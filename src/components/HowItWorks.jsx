@@ -28,7 +28,7 @@ const STEPS = [
     label: 'Step three',
     icon: MonitorCog,
     title: 'Monitor & Manage Your Trades',
-    body: 'Watch everything in one calm dashboard. Pause, adjust or stop any strategy at any time — full control stays with you, around the clock.',
+    body: 'Watch everything in one calm dashboard. Pause, adjust or stop any strategy at any time - full control stays with you, around the clock.',
     bullets: ['Live portfolio overview', 'Pause or stop anytime'],
     chip: '24/7 control',
   },
@@ -97,7 +97,7 @@ export default function HowItWorks() {
               Create your free account
             </Button>
             <p className="mt-4 text-[0.85rem] text-ink-muted">
-              Starts with a demo — no card, no funding required to explore.
+              Starts with a demo - no card, no funding required to explore.
             </p>
           </div>
         </Reveal>

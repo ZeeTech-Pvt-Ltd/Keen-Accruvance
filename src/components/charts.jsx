@@ -36,7 +36,7 @@ export const sparkEth = gen(32, { a: 0.055, f: 2.6, ph: 2.1, drift: 0.03, base: 
 export const sparkSol = gen(32, { a: 0.07, f: 2.3, ph: 3.2, drift: -0.015, base: 50 })
 export const barsPnl = [
   4, 6, 3.5, 8.5, 5, 9.5, 12, 7.5, 10, 13.5, 9, 14.5,
-] // illustrative monthly P/L, includes variance — not a promise of returns
+] // illustrative monthly P/L, includes variance - not a promise of returns
 
 /* ------------------------------------------------------------------ */
 /*  Path helpers                                                        */

@@ -16,7 +16,7 @@ const SECTIONS = [
           <a href="/privacy" className="font-medium text-forest underline decoration-forest/30 underline-offset-2 hover:decoration-forest">
             Privacy Policy
           </a>{' '}
-          before you start. Nothing on this page removes or limits a risk — it exists to make
+          before you start. Nothing on this page removes or limits a risk - it exists to make
           sure you understand them clearly.
         </p>
       </>
@@ -43,7 +43,7 @@ const SECTIONS = [
           Digital-asset prices can be extremely volatile. A position that is profitable one moment
           can become a loss the next, and gapping between prices means orders may fill at a worse
           price than expected. Liquidity can also change rapidly, especially in newer or smaller
-          markets, which affects how easily — and at what price — you can open or close a trade.
+          markets, which affects how easily - and at what price - you can open or close a trade.
         </p>
       </>
     ),
@@ -54,7 +54,7 @@ const SECTIONS = [
       <>
         <p>
           Where margin or leverage is available, it multiplies your exposure. That means potential
-          returns are magnified, but so are losses — which can exceed the amount you initially
+          returns are magnified, but so are losses - which can exceed the amount you initially
           deposited. Losses on leveraged positions may trigger margin calls or the automatic
           closing of your positions.
         </p>
@@ -70,7 +70,7 @@ const SECTIONS = [
           tools are provided <strong className="font-semibold text-ink">for informational and educational purposes only</strong>.
           They are based on historical data and statistical models, and no model can predict future
           prices. Automated execution can also behave differently in fast or illiquid markets, and
-          technical failures — connectivity, software, hardware or third-party outages — can delay
+          technical failures - connectivity, software, hardware or third-party outages - can delay
           or prevent trades you intended to make.
         </p>
       </>
@@ -150,7 +150,7 @@ const SECTIONS = [
           You are solely responsible for your trading decisions and outcomes. It is your
           responsibility to understand how the platform, its tools and any strategy you use work
           before committing real funds. If you do not fully understand a product, a fee or a risk,
-          do not trade it — ask us or an independent adviser first.
+          do not trade it - ask us or an independent adviser first.
         </p>
       </>
     ),
@@ -208,7 +208,7 @@ export default function RiskDisclosurePage() {
             <a href="mailto:support@keen-accruvance.com" className="font-medium text-forest underline decoration-forest/30 underline-offset-2 hover:decoration-forest">
               support@keen-accruvance.com
             </a>{' '}
-            — we’re happy to explain, but we can’t tell you whether to trade.
+            - we’re happy to explain, but we can’t tell you whether to trade.
           </p>
         </section>
       </div>

@@ -12,7 +12,7 @@ const REASONS = [
   {
     icon: SlidersHorizontal,
     title: 'Automated trading tools',
-    body: 'Define your rules and risk once — strategies then run around the clock, on your terms.',
+    body: 'Define your rules and risk once - strategies then run around the clock, on your terms.',
     tint: 'bg-gold/15 text-gold-deep',
   },
   {
@@ -24,7 +24,7 @@ const REASONS = [
   {
     icon: MonitorSmartphone,
     title: 'Multi-device accessibility',
-    body: 'Start on desktop, check in from your phone — your portfolio stays in perfect sync.',
+    body: 'Start on desktop, check in from your phone - your portfolio stays in perfect sync.',
     tint: 'bg-coral/10 text-coral-hover',
   },
   {
@@ -52,7 +52,7 @@ export default function WhyKeen() {
         <SectionHeading
           eyebrow="Why Keen Accruvance"
           title="Built for Smarter, More Confident Trading"
-          lead="Confidence comes from clarity — knowing what the market is doing, why your strategy is acting, and that your account is protected. That is exactly what we focus on."
+          lead="Confidence comes from clarity - knowing what the market is doing, why your strategy is acting, and that your account is protected. That is exactly what we focus on."
         />
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

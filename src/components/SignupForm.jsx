@@ -5,7 +5,7 @@ import LeadForm from './LeadForm.jsx'
 const PERKS = [
   'Protected by two-factor authentication from the moment you sign up',
   'AI signals and automated strategies included from day one',
-  'Full demo view — explore the platform before you ever fund it',
+  'Full demo view - explore the platform before you ever fund it',
 ]
 
 export default function SignupForm({ sectionId = 'signup' }) {
@@ -26,13 +26,13 @@ export default function SignupForm({ sectionId = 'signup' }) {
               Get started
             </p>
             <h2 className="text-balance mt-5 text-[2.1rem] font-semibold leading-[1.06] text-ink sm:text-5xl sm:leading-[1.03] lg:text-[3rem]">
-              Open your account —{' '}
+              Open your account -{' '}
               <span className="italic text-forest">in a few minutes.</span>
             </h2>
             <p className="text-pretty mt-5 text-base leading-relaxed text-ink-muted sm:text-lg">
               Opening an account takes only a few minutes. Tell us who you are, and
-              your secure dashboard — with two-factor authentication switched on from
-              the start — is ready to explore in demo mode.
+              your secure dashboard - with two-factor authentication switched on from
+              the start - is ready to explore in demo mode.
             </p>
 
             <ul className="mt-8 space-y-3.5">

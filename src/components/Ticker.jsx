@@ -39,7 +39,7 @@ function Row({ hidden }) {
   )
 }
 
-/** Seamless marquee of sample market prices — decorative, illustrative data. */
+/** Seamless marquee of sample market prices - decorative, illustrative data. */
 export default function Ticker() {
   return (
     <div className="relative border-b border-ink/[0.06] bg-paper/70 backdrop-blur-sm">

@@ -3,7 +3,7 @@ import { ChevronDown, Search, Check } from 'lucide-react'
 import { COUNTRIES, POPULAR, getCountry } from '../data/countries.js'
 
 /**
- * International phone input — country flag + dial code chip (offline inline SVG),
+ * International phone input - country flag + dial code chip (offline inline SVG),
  * with a searchable country picker. The number is typed as the local/national
  * number next to the code (e.g. flag +61 · 0498 9845). Defaults to Australia.
  */

@@ -6,7 +6,7 @@ const FEATURES = [
   {
     id: '01',
     title: 'AI-Powered Intelligence',
-    body: 'Keen Accruvance’s models continuously analyse price action, order flow and market context to help surface opportunities — and explain them in plain language, so you stay informed rather than overwhelmed.',
+    body: 'Keen Accruvance’s models continuously analyse price action, order flow and market context to help surface opportunities - and explain them in plain language, so you stay informed rather than overwhelmed.',
     bullets: [
       'Pattern and momentum detection across major assets',
       'Signals with readable reasoning, not black boxes',
@@ -18,11 +18,11 @@ const FEATURES = [
   {
     id: '02',
     title: 'Automated Trading',
-    body: 'Turn a strategy into a system. Configure your rules and risk preferences once, and let real-time automation handle execution around the clock — while you stay in control at every step.',
+    body: 'Turn a strategy into a system. Configure your rules and risk preferences once, and let real-time automation handle execution around the clock - while you stay in control at every step.',
     bullets: [
       'Strategy builder with defined risk parameters',
       'Real-time order execution the moment conditions align',
-      'Runs 24/7 — no screen-watching required',
+      'Runs 24/7 - no screen-watching required',
     ],
     featured: false,
     icon: Workflow,
@@ -48,7 +48,7 @@ export default function Features() {
         <SectionHeading
           eyebrow="Capabilities"
           title="Technology that works while the markets work"
-          lead="Three pillars come together in one platform — intelligence to see clearly, automation to act consistently, and security to keep it all safe."
+          lead="Three pillars come together in one platform - intelligence to see clearly, automation to act consistently, and security to keep it all safe."
         />
 
         <div className="mt-14 grid gap-6 lg:grid-cols-3">

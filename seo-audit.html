@@ -1,0 +1,941 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keen Accruvance SEO Audit</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --ink:#101817; --ink-soft:#2b3a35; --muted:#5c6f68; --muted-2:#8b9b95;
+    --paper:#ffffff; --cream:#f7f6f1; --ground:#faf9f6;
+    --line:#e6e7e1; --line-2:#d8ddd8;
+    --emerald:#087a5b; --emerald-deep:#075640; --forest:#0e8f6c;
+    --mint:#e8f4ef; --mint-deep:#d3e9de;
+    --peach:#fff0e8; --gold:#efb85c; --gold-deep:#b67f1f;
+    --coral:#e56b52;
+    --sev-crit-bg:#fdecea; --sev-crit:#b3261e; --sev-crit-ring:#f3c1bc;
+    --sev-high-bg:#fff2de; --sev-high:#9a5b00; --sev-high-ring:#efd3a0;
+    --sev-med-bg:#e8f4ef; --sev-med:#0e6b50; --sev-med-ring:#bfdfd0;
+    --sev-low-bg:#eef1ef; --sev-low:#4a5a55; --sev-low-ring:#d5dcda;
+    --code-bg:#0f1b17; --code-ink:#e9f1ec;
+    --shadow:0 1px 2px rgba(16,24,23,.05), 0 8px 24px -12px rgba(16,24,23,.12);
+    --radius:14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#e9efeb; --ink-soft:#cdd8d2; --muted:#9db0a7; --muted-2:#74877e;
+      --paper:#131d1a; --cream:#0f1916; --ground:#0b1411;
+      --line:#223129; --line-2:#2c3d34;
+      --emerald:#1fae80; --emerald-deep:#35c091; --forest:#2cc08c;
+      --mint:#143027; --mint-deep:#1d4435;
+      --peach:#34201a; --gold:#efb85c; --gold-deep:#e2a94b;
+      --coral:#f08a75;
+      --sev-crit-bg:#3a1c1a; --sev-crit:#ff9a93; --sev-crit-ring:#6e3a35;
+      --sev-high-bg:#33250d; --sev-high:#ffc766; --sev-high-ring:#6a5127;
+      --sev-med-bg:#123028; --sev-med:#52d0a0; --sev-med-ring:#2e6350;
+      --sev-low-bg:#1d2623; --sev-low:#a9bcb5; --sev-low-ring:#35463f;
+      --code-bg:#0a120e; --code-ink:#d9eee2;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#e9efeb; --ink-soft:#cdd8d2; --muted:#9db0a7; --muted-2:#74877e;
+    --paper:#131d1a; --cream:#0f1916; --ground:#0b1411;
+    --line:#223129; --line-2:#2c3d34;
+    --emerald:#1fae80; --emerald-deep:#35c091; --forest:#2cc08c;
+    --mint:#143027; --mint-deep:#1d4435;
+    --peach:#34201a; --gold:#efb85c; --gold-deep:#e2a94b;
+    --coral:#f08a75;
+    --sev-crit-bg:#3a1c1a; --sev-crit:#ff9a93; --sev-crit-ring:#6e3a35;
+    --sev-high-bg:#33250d; --sev-high:#ffc766; --sev-high-ring:#6a5127;
+    --sev-med-bg:#123028; --sev-med:#52d0a0; --sev-med-ring:#2e6350;
+    --sev-low-bg:#1d2623; --sev-low:#a9bcb5; --sev-low-ring:#35463f;
+    --code-bg:#0a120e; --code-ink:#d9eee2;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.6);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.65 "Inter",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;line-height:1.15;text-wrap:balance;margin:0}
+  p{margin:0}
+  a{color:var(--emerald)}
+  code{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.86em}
+  .mono,.tag,.sev,.kv b,.label{font-family:"IBM Plex Mono",ui-monospace,monospace}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+  .container{max-width:1120px;margin:0 auto;padding:0 22px}
+
+  /* masthead */
+  .mast{background:radial-gradient(1200px 420px at 85% -10%, rgba(239,184,92,.14), transparent 60%), radial-gradient(900px 400px at -10% 0%, rgba(8,122,91,.16), transparent 55%), var(--ground);border-bottom:1px solid var(--line);padding:56px 0 44px}
+  .mast .eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--emerald);font-weight:600;display:flex;gap:10px;align-items:center}
+  .mast .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold-deep)}
+  .mast h1{font-size:clamp(2.1rem,5vw,3.4rem);font-weight:600;margin-top:16px;letter-spacing:-.01em}
+  .mast .sub{margin-top:14px;max-width:62ch;color:var(--muted);font-size:1.04rem}
+  .mast .meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;font-size:.74rem;color:var(--muted);font-family:"IBM Plex Mono",monospace;letter-spacing:.06em}
+  .mast .meta b{color:var(--ink-soft);font-weight:600}
+
+  .critical{display:flex;gap:16px;align-items:flex-start;margin:26px 0 8px;padding:18px 20px;border:1px solid var(--sev-crit-ring);background:var(--sev-crit-bg);border-radius:var(--radius)}
+  .critical .dot{flex:none;width:12px;height:12px;margin-top:5px;border-radius:50%;background:var(--sev-crit);box-shadow:0 0 0 4px var(--sev-crit-ring)}
+  .critical h3{color:var(--sev-crit);font-family:"Inter",sans-serif;font-weight:700;font-size:1rem;line-height:1.3}
+  .critical p{margin-top:5px;color:inherit;font-size:.94rem}
+
+  /* score tiles */
+  .scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:26px 0 8px}
+  .score{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:16px 16px 14px;box-shadow:var(--shadow)}
+  .score .n{font-family:"IBM Plex Mono",monospace;font-size:1.7rem;font-weight:600;letter-spacing:-.02em}
+  .score .l{font-size:.74rem;color:var(--muted);margin-top:2px;letter-spacing:.02em}
+  .bar{height:5px;border-radius:99px;background:var(--line-2);margin-top:10px;overflow:hidden}
+  .bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--emerald),var(--forest))}
+  .bar.crit i{background:linear-gradient(90deg,var(--sev-crit),var(--coral))}
+
+  /* sections + headings */
+  section.block{padding:34px 0 6px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;border-top:1px solid var(--line);padding-top:26px;margin-bottom:6px}
+  .sec-head .no{font-family:"IBM Plex Mono",monospace;color:var(--gold-deep);font-size:.85rem;font-weight:600;letter-spacing:.08em}
+  h2.p{font-size:clamp(1.5rem,3vw,2rem);font-weight:600}
+  .lead{margin-top:10px;max-width:74ch;color:var(--muted);font-size:.97rem}
+  h3.g{font-family:"Inter",sans-serif;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--emerald);margin:26px 0 10px}
+  p.bl{margin:12px 0;max-width:82ch;color:var(--muted);font-size:.95rem}
+  p.bl strong{color:var(--ink)}
+  .kicker{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-2);font-family:"IBM Plex Mono",monospace;margin-top:34px}
+
+  /* tables */
+  .tbl{overflow-x:auto;margin:12px 0 8px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper)}
+  table{border-collapse:collapse;width:100%;min-width:760px;font-size:.86rem}
+  th,td{text-align:left;vertical-align:top;padding:11px 13px;border-bottom:1px solid var(--line)}
+  th{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--cream);position:sticky;top:0}
+  tr:last-child td{border-bottom:0}
+  tbody tr:hover{background:color-mix(in srgb, var(--emerald) 3%, transparent)}
+  td .b, td b{color:var(--ink)}
+  table.min{min-width:600px}
+
+  .sev{display:inline-flex;align-items:center;gap:6px;padding:2px 9px;border-radius:99px;font-size:.66rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
+  .sev::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+  .crit{background:var(--sev-crit-bg);color:var(--sev-crit);box-shadow:inset 0 0 0 1px var(--sev-crit-ring)}
+  .high{background:var(--sev-high-bg);color:var(--sev-high);box-shadow:inset 0 0 0 1px var(--sev-high-ring)}
+  .med{background:var(--sev-med-bg);color:var(--sev-med);box-shadow:inset 0 0 0 1px var(--sev-med-ring)}
+  .low{background:var(--sev-low-bg);color:var(--sev-low);box-shadow:inset 0 0 0 1px var(--sev-low-ring)}
+  .sev span{display:block;overflow:hidden;text-overflow:ellipsis}
+  .ok{color:var(--forest);font-weight:600}
+  .warn{color:var(--sev-high);font-weight:600}
+  .bad{color:var(--sev-crit);font-weight:600}
+
+  .chip{display:inline-flex;align-items:center;padding:3px 10px;border-radius:99px;font-size:.7rem;font-weight:600;font-family:"IBM Plex Mono",monospace}
+  .chip.em{background:var(--mint);color:var(--sev-med)}
+  .chip.gold{background:var(--sev-high-bg);color:var(--sev-high)}
+  .chip.crit{background:var(--sev-crit-bg);color:var(--sev-crit)}
+
+  .file{margin:14px 0 0;border:1px solid var(--line-2);border-radius:10px;overflow:hidden}
+  .file>div{display:flex;justify-content:space-between;gap:12px;background:var(--cream);padding:8px 14px;font-family:"IBM Plex Mono",monospace;font-size:.74rem;letter-spacing:.03em;color:var(--muted);border-bottom:1px solid var(--line)}
+  pre{margin:0;background:var(--code-bg);color:var(--code-ink);padding:16px 18px;overflow-x:auto;font:13px/1.6 "IBM Plex Mono",monospace}
+  pre .c{color:#6f9c86}
+  details.file{margin:16px 0}
+  details.file summary{cursor:pointer;list-style:none;display:inline-flex;gap:8px;align-items:center;color:var(--emerald);font-weight:600;font-size:.86rem}
+  details.file summary::before{content:"+";font-family:"IBM Plex Mono",monospace}
+  details.file[open] summary::before{content:"–"}
+
+  .call{display:grid;gap:8px;grid-template-columns:1fr;padding:16px 18px;border:1px solid var(--line);background:var(--paper);border-radius:var(--radius);margin:12px 0}
+  .call .t{font-family:"Inter",sans-serif;font-weight:600;font-size:.92rem}
+  .call .d{color:var(--muted);font-size:.9rem}
+  .arrows{display:grid;gap:8px;margin:10px 0}
+  .arrows .ar{display:grid;grid-template-columns:150px auto 150px minmax(150px,1fr);gap:8px;align-items:center;padding:9px 12px;background:var(--paper);border:1px solid var(--line);border-radius:10px;font-size:.85rem}
+  .arrows .arrow{text-align:center;color:var(--gold-deep);font-family:"IBM Plex Mono",monospace}
+  .mono-box{font-family:"IBM Plex Mono",monospace;font-size:.78rem;background:var(--paper);border:1px solid var(--line);padding:8px 12px;border-radius:8px;overflow-x:auto}
+
+  ul.tight{list-style:none;padding:0;margin:8px 0}
+  ul.tight li{position:relative;padding:5px 0 5px 22px;color:var(--muted);font-size:.92rem;max-width:90ch}
+  ul.tight li::before{content:"";position:absolute;left:4px;top:13px;width:7px;height:7px;border-radius:2px;background:var(--emerald);opacity:.7}
+  ul.tight li b{color:var(--ink)}
+  ul.tight.tick li::before{border-radius:50%;background:var(--gold-deep)}
+
+  .steps{counter-reset:st;margin:8px 0;display:grid;gap:10px}
+  .steps .st{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .steps .st::before{counter-increment:st;content:counter(st);font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--emerald);background:var(--mint);border-radius:9px;display:grid;place-items:center;height:34px;font-size:.9rem}
+  .steps .st .t{font-weight:600;font-size:.95rem}
+  .steps .st .d{color:var(--muted);font-size:.9rem;margin-top:2px}
+
+  .road{display:grid;gap:12px;margin:8px 0}
+  .road .r{border:1px solid var(--line);border-left:4px solid var(--road);border-radius:10px;background:var(--paper);padding:14px 16px}
+  .road .r .top{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px}
+  .road .r h4{font-family:"Inter",sans-serif;font-weight:600;font-size:.98rem}
+  .road .r .win{font-size:.78rem;color:var(--muted)}
+  .road .r ul{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:.9rem}
+  .road .r ul li{margin:3px 0}
+
+  footer.ft{border-top:1px solid var(--line);margin-top:44px;padding:26px 0 60px;color:var(--muted-2);font-size:.8rem}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:760px){.twocol{grid-template-columns:1fr}}
+  .grid2{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  .box{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .box .t{font-weight:600;font-size:.92rem}
+  .box .d{color:var(--muted);font-size:.88rem;margin-top:4px}
+  .toknav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--ground) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .toknav .row{display:flex;gap:6px;overflow-x:auto;padding:9px 22px;max-width:1120px;margin:0 auto}
+  .toknav a{font-size:.72rem;color:var(--muted);text-decoration:none;white-space:nowrap;padding:4px 9px;border-radius:99px;border:1px solid transparent}
+  .toknav a:hover{color:var(--emerald);border-color:var(--line-2)}
+  .cmp{background:var(--mint);border:1px solid var(--line-2);border-radius:10px;padding:12px 14px;margin:12px 0;font-size:.9rem;color:var(--ink-soft)}
+  .cmp b{font-family:"IBM Plex Mono",monospace;font-size:.78rem;display:block;letter-spacing:.04em}
+  .pill{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted);border:1px solid var(--line-2);padding:1px 8px;border-radius:6px;margin:0 3px 3px 0}
+  .toolong{color:var(--sev-high);font-size:.72rem}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap">
+    <p class="eyebrow">Technical SEO Audit &amp; Implementation Plan</p>
+    <h1>Keen Accruvance<br>SEO Audit</h1>
+    <p class="sub">A complete, evidence-based audit of <strong>keen-accruvance.com</strong> — an AI-powered trading platform built as a React&nbsp;19 + Vite + Tailwind&nbsp;4 single-page application. Every finding below was verified against the live site <em>and</em> the project source, not guessed. Fixes are written for a beginner to apply safely.</p>
+    <div class="meta">
+      <span><b>Audit date</b> 4 Sep 2026</span>
+      <span><b>Stack</b> React 19 · Vite 8 · Tailwind 4</span>
+      <span><b>Host</b> Vercel (detected)</span>
+      <span><b>Method</b> live curl checks + source review</span>
+      <span><b>Scope</b> global English</span>
+    </div>
+
+    <div class="critical">
+      <span class="dot" aria-hidden="true"></span>
+      <div>
+        <h3>Critical: every route except / returns HTTP 404 on the live site</h3>
+        <p>Verified live: <code>/about</code>, <code>/contact</code>, <code>/signup</code>, <code>/how-it-works</code> and <code>/privacy</code> all return <strong>404</strong>. The site is hosted on <strong>Vercel</strong>, but <code>public/_redirects</code> is a <strong>Netlify</strong> file — Vercel ignores it, so there is no SPA fallback. Google cannot crawl or index a single inner page, every refresh/deep-link 404s for users, and any future sitemap is pointless until this is fixed. Fix is one file: <code>vercel.json</code> (below, Phase 1 row 1).</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="toknav" aria-label="Report contents">
+  <div class="row">
+    <a href="#scores">Scores</a>
+    <a href="#exec">Executive summary</a>
+    <a href="#p1">1·Audit</a>
+    <a href="#p2">2·Keywords</a>
+    <a href="#p3">3·Page-by-page</a>
+    <a href="#p4">4·On-page</a>
+    <a href="#p5">5·Technical</a>
+    <a href="#p6">6·Schema</a>
+    <a href="#p7">7·Content</a>
+    <a href="#p8">8·Internal links</a>
+    <a href="#p9">9·Images</a>
+    <a href="#p10">10·Local</a>
+    <a href="#p11">11·Social/SERP</a>
+    <a href="#p12">12·Search Console</a>
+    <a href="#p13">13·Roadmap</a>
+    <a href="#final">Final output</a>
+    <a href="#impl">Files to change</a>
+  </div>
+</div>
+
+<main class="container">
+
+  <!-- SCORES -->
+  <section class="block" id="scores">
+    <div class="sec-head"><span class="no">§0</span><h2 class="p">Overall SEO score</h2></div>
+    <div class="scores">
+      <div class="score"><div class="n">38<span style="font-size:1rem;color:var(--muted-2)">/100</span></div><div class="l">Overall</div><div class="bar"><i style="width:38%"></i></div></div>
+      <div class="score"><div class="n crit" style="color:var(--sev-crit)">28</div><div class="l">Technical</div><div class="bar crit"><i style="width:28%"></i></div></div>
+      <div class="score"><div class="n">46</div><div class="l">On-page</div><div class="bar"><i style="width:46%"></i></div></div>
+      <div class="score"><div class="n">58</div><div class="l">Content</div><div class="bar"><i style="width:58%"></i></div></div>
+      <div class="score"><div class="n">72</div><div class="l">Performance*</div><div class="bar"><i style="width:72%"></i></div></div>
+      <div class="score"><div class="n">80</div><div class="l">Mobile</div><div class="bar"><i style="width:80%"></i></div></div>
+    </div>
+    <p class="bl"><strong>*Performance and Mobile are estimates</strong> from code review and live checks (no real <code>&lt;img&gt;</code>s, SVG charts, responsive verified at 320–1280&nbsp;px). Field data belongs in Google Search Console &gt; Core Web Vitals once verified. The other scores are driven by the verified SPA-fallback 404, missing robots/sitemap/canonicals, single shared &lt;title&gt;, and duplicate homepage URLs.</p>
+  </section>
+
+  <!-- EXEC -->
+  <section class="block" id="exec">
+    <div class="sec-head"><span class="no">§1</span><h2 class="p">Executive summary</h2></div>
+    <p class="bl">The site <strong>looks premium and the content is genuinely good</strong> — original copy, honest risk language, real demo labelling, clean information architecture. That means the fastest wins here are technical, not content. The single biggest blocker is that <strong>the SPA has no working server-side fallback</strong>, so search engines and anyone who refreshes a deep link get 404. After that, the work is: give every real page its own title/description/canonical, ship <code>robots.txt</code> + <code>sitemap.xml</code>, add one <code>og.png</code> so shares look right, add Organization/WebSite/FAQ structured data, and de-duplicate the 11 homepage deep-link URLs so they stop competing with <code>/</code>.</p>
+    <div class="grid2">
+      <div class="box"><div class="t">What is already strong</div><div class="d">HTTPS + HTTP→HTTPS 308 redirect ✓ · www→non-www resolves ✓ · <code>lang="en"</code>, viewport, theme-color ✓ · one logical H1 per real page ✓ · semantic HTML, skip-link, aria ✓ · mobile-first responsive (audited 320→1280px, no overflow) ✓ · fast page (no raster images, inline SVG) ✓</div></div>
+      <div class="box"><div class="t">What is missing (headline)</div><div class="d">SPA fallback 404 on every inner route ✗ · <code>robots.txt</code> &amp; <code>sitemap.xml</code> (404) ✗ · per-page titles/metas (one shared &lt;title&gt;) ✗ · no canonical tags ✗ · no JSON-LD ✗ · no <code>og:image</code>/twitter image ✗ · 11 duplicate homepage URLs ✗ · <code>_redirects</code> wrong host ✗</div></div>
+    </div>
+  </section>
+
+  <!-- PHASE 1 -->
+  <section class="block" id="p1">
+    <div class="sec-head"><span class="no">PHASE 1</span><h2 class="p">Complete audit (25 areas)</h2></div>
+    <p class="lead">Each row maps to one of the requested audit categories. Verified severity: <span class="sev crit"><span>Critical</span></span> blocks crawling/conversion, <span class="sev high"><span>High</span></span> blocks rankings, <span class="sev med"><span>Medium</span></span> should be fixed soon, <span class="sev low"><span>Low</span></span> polish.</p>
+
+    <div class="tbl"><table>
+      <thead><tr><th style="width:110px">Area / Sev</th><th style="width:26%">Issue (evidence)</th><th style="width:26%">Why it matters</th><th>Recommended fix · exact implementation</th></tr></thead>
+      <tbody>
+        <tr><td><span class="pill">24 Crawlability</span><br><span class="sev crit"><span>Critical</span></span></td>
+            <td><b>SPA fallback missing on Vercel.</b> Host is Vercel (<code>Server: Vercel</code>); <code>public/_redirects</code> is Netlify-only and ignored. Live: <code>/about</code> <code>/signup</code> <code>/contact</code> <code>/how-it-works</code> all → <b>404</b>.</td>
+            <td>No inner page is crawlable or indexable; all internal links &amp; refreshes 404; sitemap/OG work is moot until fixed. The single most damaging issue found.</td>
+            <td>Delete nothing. <b>Add</b> <code>vercel.json</code> at project root:
+<pre>{
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}</pre>
+Static files (<code>/robots.txt</code>, <code>/sitemap.xml</code>, <code>/favicon.svg</code>) still win because Vercel serves filesystem before rewrites. Redeploy, then re-test <code>/about</code> → 200. Keep <code>_redirects</code> only if you may move to Netlify later.</td></tr>
+        <tr><td><span class="pill">7 URL structure</span><br><span class="sev crit"><span>Critical</span></span></td>
+            <td><b>Shared page identity.</b> Every route serves the same static &lt;head&gt;. Grep across <code>src/</code> found <b>no</b> <code>document.title</code>, canonical, or meta handling.</td>
+            <td>All 13+ URLs show one homepage title/description in the SERP; Google picks one to show, cannibalising distinct pages (About, Contact, legal) that should rank for their own queries.</td>
+            <td>Add a route-level SEO helper and call it on navigation — see Phase 3/5 for the full <code>src/seo.js</code> code and <code>App.jsx</code> diff. This gives unique title, meta description, canonical and og per page, plus <code>noindex</code> on <code>/thank-you</code>.</td></tr>
+        <tr><td><span class="pill">13 Canonical</span><br><span class="sev high"><span>High</span></span></td>
+            <td><b>No <code>rel="canonical"</code> anywhere</b> — verified in source and live HTML.</td>
+            <td>11 homepage-section URLs (<code>/how-it-works</code>, <code>/why-invest</code>, <code>/security</code>, <code>/faq</code>, <code>/features</code>, <code>/resources</code>, <code>/testimonials</code>, <code>/cta</code>, <code>/home</code>…) render the <b>entire homepage</b> — byte-identical DOM. Without canonicals they become 11 near-duplicate pages competing with <code>/</code>.</td>
+            <td>In <code>seo.js</code>: for home-section routes set canonical to <code>https://keen-accruvance.com/</code>; for real pages set canonical to their own clean URL (no trailing slash). Full code in Phase 5.</td></tr>
+        <tr><td><span class="pill">11 Sitemap</span><br><span class="sev high"><span>High</span></span></td>
+            <td><b><code>/sitemap.xml</code> → 404</b> (live).</td>
+            <td>No discovery map for Google; new/changed pages indexed slowly; <code>/thank-you</code> could get indexed without sitemap-level signalling.</td>
+            <td><b>Add</b> <code>public/sitemap.xml</code> — exact file in Phase 5 (list <code>/</code>, <code>/about</code>, <code>/contact</code>, <code>/signup</code> + legal; omit <code>/thank-you</code> and homepage-section duplicates).</td></tr>
+        <tr><td><span class="pill">12 Robots.txt</span><br><span class="sev high"><span>High</span></span></td>
+            <td><b><code>/robots.txt</code> → 404</b> (live).</td>
+            <td>No crawler control; can’t block <code>/thank-you</code> at crawl layer; Google logs a crawl warning for missing robots.txt.</td>
+            <td><b>Add</b> <code>public/robots.txt</code> — exact file in Phase 5, incl. <code>Disallow: /thank-you</code> and the Sitemap line.</td></tr>
+        <tr><td><span class="pill">14 Indexing</span><br><span class="sev high"><span>High</span></span></td>
+            <td><b><code>/thank-you</code> is indexable thin content</b> and shows only after session data; also unknown URLs render the client 404 with HTTP 200 after the rewrite fix.</td>
+            <td>Empty/session pages waste crawl budget and can appear as “soft 404”s in Search Console.</td>
+            <td><code>noindex,follow</code> for <code>/thank-you</code> via <code>seo.js</code>. Optional later: return a true 404 via serverless function for unknown paths.</td></tr>
+        <tr><td><span class="pill">16 Broken links</span><br><span class="sev high"><span>High</span></span></td>
+            <td><b>Every internal path link 404s when requested directly</b> (not via client-side click). Verified above.</td>
+            <td>Same root cause as row 1, but worth listing separately because Google counts each as a crawl error and users hitting “open in new tab” see 404s.</td>
+            <td>Resolved by the <code>vercel.json</code> rewrite. Then re-run a crawl (Screaming Frog free tier or Ahrefs) to confirm zero 4xx on real URLs.</td></tr>
+        <tr><td><span class="pill">15 Duplicate content</span><br><span class="sev high"><span>High</span></span></td>
+            <td>11 clean-URL routes are the <b>same full homepage</b> DOM; plus trailing slash variants would double them after the rewrite fix.</td>
+            <td>Ranking power splits across identical URLs; Google may show the wrong variant or fold unpredictably.</td>
+            <td>Canonical all home-section routes → <code>/</code> (in <code>seo.js</code>). Normalise <code>/privacy/</code> → <code>/privacy</code> in <code>currentPath()</code> (Phase 5 diff) so trailing-slash 404s become the right page.</td></tr>
+        <tr><td><span class="pill">1 Technical — meta</span><br><span class="sev high"><span>High</span></span></td>
+            <td>Title is generic: <b>“Keen Accruvance — AI-Powered Trading Platform”</b> (≈49 chars) shared by all pages; no keyword differentiation, no page-name first.</td>
+            <td>Titles are the #1 on-SERP decision factor; a shared title hides About/Contact/FAQ pages.</td>
+            <td>Per-page titles in Phase 3 table + <code>seo.js</code>. Home keeps brand-first (brand queries); sub-pages lead with the page purpose.</td></tr>
+        <tr><td><span class="pill">19/20 Social meta</span><br><span class="sev high"><span>High</span></span></td>
+            <td><code>og:image</code>, <code>og:url</code>, <code>twitter:title</code>, <code>twitter:description</code>, <code>twitter:image</code> <b>all missing</b>. <code>twitter:card=summary_large_image</code> points at an image that doesn’t exist.</td>
+            <td>Links shared on WhatsApp/Twitter/LinkedIn render with no image or wrong card; ugly, low-CTR shares of your best marketing surface.</td>
+            <td>Create <code>public/og.png</code> 1200×630 (brand colours + name) and add full OG/Twitter tags in <code>index.html</code> — exact snippet Phase 11.</td></tr>
+        <tr><td><span class="pill">6 Schema</span><br><span class="sev high"><span>High</span></span></td>
+            <td><b>No structured data</b> (no <code>application/ld+json</code> anywhere).</td>
+            <td>No rich results, no brand knowledge-panel hooks, no FAQ rich snippets; you lose SERP real estate and E-E-A-T signals.</td>
+            <td>Add Organization + WebSite JSON-LD in <code>index.html</code> and FAQPage on the homepage route — full code Phase 6.</td></tr>
+        <tr><td><span class="pill">2 On-page — H1</span><br><span class="sev med"><span>Medium</span></span></td>
+            <td>Homepage H1 = <i>“Smarter Trading. Powered by AI.”</i> — emotive, but doesn’t state <em>what Keen Accruvance is</em>; inner routes inherit it because they’re the homepage.</td>
+            <td>A crawler should infer the topic (AI trading platform) from the H1. The visual design is strong — keep it, but back it with real page-level signals below the fold and schema.</td>
+            <td>Keep the H1 (brand/design call). Add service-topic H2s and Organization schema to carry the meaning. For future real sub-pages, give each its own descriptive H1.</td></tr>
+        <tr><td><span class="pill">22 Heading structure</span><br><span class="sev med"><span>Medium</span></span></td>
+            <td>Homepage stacks <code>h2</code> per section with <code>h3</code> cards — clean. On <code>/about</code>, <code>/contact</code>, legal pages: one <code>h1</code> then <code>h2</code>s — clean. No skipped levels found.</td>
+            <td>Good hierarchy is an E-E-A-T/readability signal; skipping levels or multiple H1s hurts.</td>
+            <td>No change needed on structure — keep one H1 per real page. When you add FAQ schema, mirror it with visible <code>h3</code> question headings (already done in the FAQ accordion).</td></tr>
+        <tr><td><span class="pill">9 Image SEO</span><br><span class="sev med"><span>Medium</span></span></td>
+            <td>No raster <code>&lt;img&gt;</code> on the site (inline SVG charts + one <code>favicon.svg</code>). <b>No social share image exists</b> as a file.</td>
+            <td>Great for speed (nothing to lazy-load); the only real gap is the missing OG image (see row above) and a favicon-only identity.</td>
+            <td>Add <code>og.png</code> (1200×630) and optional <code>apple-touch-icon.png</code> (180×180). No lazy-loading/WebP work needed because there are no bitmap images.</td></tr>
+        <tr><td><span class="pill">18 HTTPS/security</span><br><span class="sev low"><span>Low</span></span></td>
+            <td>HTTPS ✓, 308 redirect ✓, HSTS/security headers not verified; Vercel defaults fine but unset.</td>
+            <td>HTTPS is a ranking signal and trust gate; hard-to-miss security headers add E-E-A-T and safety signals.</td>
+            <td>Optional: add <code>headers</code> to <code>vercel.json</code> (HSTS, X-Content-Type-Options, X-Frame-Options, Referrer-Policy). Code in Phase 5.</td></tr>
+        <tr><td><span class="pill">17 Redirects / slash</span><br><span class="sev low"><span>Low</span></span></td>
+            <td><code>/privacy/</code> (trailing slash) → 404 today; after the rewrite it becomes a client 404 soft-page.</td>
+            <td>Inconsistent URL variants fragment links and crawl paths.</td>
+            <td>Normalise trailing slash in <code>currentPath()</code> (Phase 5). www/non-www already resolves — no action.</td></tr>
+        <tr><td><span class="pill">8 Performance</span><br><span class="sev low"><span>Low</span></span></td>
+            <td>No images, <code>display=swap</code> fonts, preconnects present, small CSS. Single JS bundle (no route-level code splitting). No field data yet.</td>
+            <td>Already light; bundle splitting helps on slow 4G but isn’t urgent for a marketing page.</td>
+            <td>Verify with Lighthouse + CrUX once indexed. Optional later: <code>React.lazy</code> for chrome-less/legal routes. Do <b>not</b> over-optimise now.</td></tr>
+        <tr><td><span class="pill">23 JS rendering</span><br><span class="sev low"><span>Low</span></span></td>
+            <td>Content is client-rendered; Google executes JS and will index it, but title/meta are set only in static HTML until <code>seo.js</code> is added.</td>
+            <td>Client-rendered SPA titles can lag behind or be misread without per-route tags; secondary crawlers (Bing, social scrapers) may see only the shell.</td>
+            <td>Route meta via <code>seo.js</code> (Phase 5). If you later want robust rendering for all crawlers, evaluate Vite prerender or Vercel Edge rendering — Phase 5 “optional” note.</td></tr>
+        <tr><td><span class="pill">21 Accessibility→SEO</span><br><span class="sev low"><span>Low</span></span></td>
+            <td>Skip-link ✓, focus styles ✓, <code>aria-expanded</code> on FAQ ✓, form labels ✓. Colour-contrast of small muted text is borderline on some sections.</td>
+            <td>Accessibility is a quality/E-E-A-T signal and required for inclusive UX; borderline contrast also reduces readability (a UX ranking factor).</td>
+            <td>No structural fix required. If you restyle later, keep body text ≥ <code>#5c6f68</code>-dark on light and run axe once.</td></tr>
+        <tr><td><span class="pill">25 GSC readiness</span><br><span class="sev low"><span>Low</span></span></td>
+            <td>No evidence of Search Console verification, sitemap submission, or indexing history.</td>
+            <td>You’re flying blind on queries, CTR, Core Web Vitals and index coverage.</td>
+            <td>Full 12-step GSC onboarding in Phase 12.</td></tr>
+        <tr><td><span class="pill">3/4 Content SEO</span><br><span class="sev med"><span>Medium</span></span></td>
+            <td>Copy is high-quality but <b>no page has substantial body copy optimised for search intent</b>; services are described in sections, not as crawlable informational/transactional text with headings. Legal pages exist but <code>/about</code> is short.</td>
+            <td>For a brand-new domain there is almost no non-brand organic query the site can win until there is real topical text.</td>
+            <td>See Phase 7: add honest service/education copy (not keyword stuffing) and a small evergreen blog/guides section later as the growth engine.</td></tr>
+        <tr><td><span class="pill">10 Favicon</span><br><span class="sev low"><span>Low</span></span></td>
+            <td><code>favicon.svg</code> exists and is linked ✓. No PNG fallback for older crawlers/browsers.</td>
+            <td>SVG favicons are fine in modern browsers; a PNG fallback helps a few legacy contexts and social/OS touch icons.</td>
+            <td>Optional: add <code>&lt;link rel="icon" href="/favicon.svg" type="image/svg+xml"&gt;</code> + <code>&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png"&gt;</code>.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="bl"><strong>Areas verified OK (no action):</strong> HTTPS/redirects (6, 18 partial), www-vs-non-www, mobile responsiveness (7), image weight (9), heading hierarchy (22), accessibility basics (21), internal-link navigation presence, page-load weight (8). Categories 3–5 &amp; 10 content gaps are covered in Phases 2/3/7.</p>
+  </section>
+
+  <!-- PHASE 2 -->
+  <section class="block" id="p2">
+    <div class="sec-head"><span class="no">PHASE 2</span><h2 class="p">Keyword research</h2></div>
+    <p class="lead">Keen Accruvance is a <strong>global, new, AI-trading-software brand</strong> (digital-asset focus: BTC/ETH/SOL shown; demo-first). Realistically it will <em>not</em> rank for head terms like “AI trading platform” for a long time. So keywords below prioritise <strong>qualified commercial + long-tail intent</strong> you can genuinely win, and the honest brand/explainer terms that match the actual product. No fake-volume guesses — every keyword maps to a page that exists or is recommended.</p>
+
+    <h3 class="g">Primary keywords (11)</h3>
+    <div class="tbl"><table class="min">
+      <thead><tr><th>Keyword</th><th>Intent</th><th>Priority</th><th>Suggested page</th><th>Placement</th><th>Why relevant</th></tr></thead>
+      <tbody>
+        <tr><td><b>keen accruvance</b></td><td>Navigational</td><td><span class="sev crit"><span>P0</span></span></td><td>Home</td><td>Title, H1/visual copy, Organization schema</td><td>Brand SERP ownership — first goal for a new brand.</td></tr>
+        <tr><td><b>ai trading platform</b></td><td>Commercial</td><td><span class="sev crit"><span>P1</span></span></td><td>Home + Why Invest</td><td>Home title/H2; Why Invest lead</td><td>Exact product category; hero copy already implies it.</td></tr>
+        <tr><td><b>ai trading signals</b></td><td>Commercial</td><td><span class="sev crit"><span>P1</span></span></td><td>Home (FAQ) + guides</td><td>Features “AI-Powered Intelligence”; FAQ #3</td><td>Second core feature, named verbatim in Features.</td></tr>
+        <tr><td><b>automated trading strategies</b></td><td>Commercial</td><td><span class="sev crit"><span>P1</span></span></td><td>Home Features/How-it-works</td><td>Features #2; How-it-works step 2</td><td>Matches the “Automated Trading” pillar.</td></tr>
+        <tr><td><b>crypto trading bot / automated crypto trading</b></td><td>Transactional</td><td><span class="sev high"><span>P2</span></span></td><td>Why Invest + future guide</td><td>Body H2 + FAQ #6</td><td>High buyer-intent; demo covers BTC/ETH/SOL. Tread honestly (no profit claims).</td></tr>
+        <tr><td><b>ai trading app / platform for beginners</b></td><td>Informational+Commercial</td><td><span class="sev high"><span>P2</span></span></td><td>How It Works</td><td>Lead/H2</td><td>Product explicitly beginner-friendly; FAQ #2.</td></tr>
+        <tr><td><b>demo trading account</b></td><td>Transactional</td><td><span class="sev high"><span>P2</span></span></td><td>Signup + CTA copy</td><td>Signup page body/H1</td><td>The signup is demo-first — a real differentiator worth claiming.</td></tr>
+        <tr><td><b>secure trading platform (2FA)</b></td><td>Commercial</td><td><span class="sev med"><span>P2</span></span></td><td>Security section/Home</td><td>Security H2 + bullets</td><td>Trust gate for finance; Security section content exists.</td></tr>
+        <tr><td><b>trading signals for bitcoin/ethereum</b></td><td>Transactional</td><td><span class="sev med"><span>P3</span></span></td><td>Home + guide</td><td>FAQ #6, Resources copy</td><td>High specificity; matches visible market list.</td></tr>
+        <tr><td><b>keen accruvance review</b></td><td>Investigational</td><td><span class="sev med"><span>P3</span></span></td><td>Home (Testimonials)</td><td>Schema/aggregate note</td><td>People search brand+review before signup; give them honest proof.</td></tr>
+        <tr><td><b>how to start automated trading</b></td><td>Informational</td><td><span class="sev high"><span>P2</span></span></td><td>Future blog/guides</td><td>Long-form post</td><td>Top-of-funnel entry that funnels to the product.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="g">Secondary keywords (24)</h3>
+    <div class="tbl"><table class="min">
+      <thead><tr><th>Keyword</th><th>Intent</th><th>Priority</th><th>Placement</th></tr></thead>
+      <tbody>
+        <tr><td>trading technology platform</td><td>Commercial</td><td>P2</td><td>Home lead / About</td></tr>
+        <tr><td>real-time market intelligence</td><td>Informational</td><td>P2</td><td>Home body, Why Invest</td></tr>
+        <tr><td>automated trading software</td><td>Commercial</td><td>P2</td><td>Features copy</td></tr>
+        <tr><td>algorithmic trading signals</td><td>Informational</td><td>P3</td><td>Resources/signals copy</td></tr>
+        <tr><td>trading signals rating</td><td>Informational</td><td>P3</td><td>Features/FAQ</td></tr>
+        <tr><td>strategy builder (no code)</td><td>Commercial</td><td>P3</td><td>How It Works step 2</td></tr>
+        <tr><td>risk management / risk limits in trading</td><td>Informational</td><td>P2</td><td>How It Works, Why Invest, Risk pages</td></tr>
+        <tr><td>portfolio dashboard</td><td>Informational</td><td>P3</td><td>Resources/tour copy</td></tr>
+        <tr><td>pause / stop automated strategy</td><td>Informational</td><td>P3</td><td>FAQ #5</td></tr>
+        <tr><td>two-factor authentication trading</td><td>Commercial</td><td>P2</td><td>Security section</td></tr>
+        <tr><td>encrypted trading account</td><td>Commercial</td><td>P3</td><td>Security copy</td></tr>
+        <tr><td>digital asset trading</td><td>Commercial</td><td>P2</td><td>Why Invest, FAQ #6</td></tr>
+        <tr><td>bitcoin / ethereum / solana price signals</td><td>Transactional</td><td>P3</td><td>Home resources copy (honestly demo)</td></tr>
+        <tr><td>market volatility trading</td><td>Informational</td><td>P3</td><td>Risk disclosure anchors</td></tr>
+        <tr><td>is ai trading safe</td><td>Investigational</td><td>P2</td><td>Security section + FAQ</td></tr>
+        <tr><td>demo account vs live trading</td><td>Informational</td><td>P2</td><td>Signup + FAQ + Thank-you</td></tr>
+        <tr><td>do ai trading signals work</td><td>Investigational</td><td>P2</td><td>FAQ #3 + honest explainer</td></tr>
+        <tr><td>trading platform no card required</td><td>Transactional</td><td>P3</td><td>Signup page</td></tr>
+        <tr><td>free demo trading platform</td><td>Transactional</td><td>P2</td><td>Signup + Home CTA</td></tr>
+        <tr><td>beginners guide to trading</td><td>Informational</td><td>P3</td><td>Future blog</td></tr>
+        <tr><td>trading risk disclosure</td><td>Informational</td><td>P3</td><td>Legal anchors</td></tr>
+        <tr><td>24/7 trading market access</td><td>Commercial</td><td>P3</td><td>Stats/Why Invest</td></tr>
+        <tr><td>trading platform 98 countries</td><td>Commercial</td><td>P3</td><td>Stats copy</td></tr>
+        <tr><td>how does an ai trading platform work</td><td>Informational</td><td>P2</td><td>How It Works body</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="g">Long-tail keywords (22)</h3>
+    <div class="tbl"><table class="min">
+      <thead><tr><th>Keyword</th><th>Intent</th><th>Priority</th><th>Page / use</th></tr></thead>
+      <tbody>
+        <tr><td>can i automate crypto trading with ai</td><td>Informational</td><td>P2</td><td>FAQ / guide</td></tr>
+        <tr><td>ai trading platform for beginners no experience</td><td>Transactional</td><td>P2</td><td>How It Works</td></tr>
+        <tr><td>best demo trading platform to learn first</td><td>Transactional</td><td>P2</td><td>Signup / guides</td></tr>
+        <tr><td>does keen accruvance need a deposit to start</td><td>Commercial</td><td>P2</td><td>FAQ + signup copy</td></tr>
+        <tr><td>keen accruvance free demo account</td><td>Transactional</td><td>P1</td><td>Signup page title/body</td></tr>
+        <tr><td>can you pause an automated trading bot</td><td>Informational</td><td>P2</td><td>FAQ #5</td></tr>
+        <tr><td>how do ai trading signals get generated</td><td>Informational</td><td>P3</td><td>Features/FAQ</td></tr>
+        <tr><td>is two factor authentication enough for trading accounts</td><td>Investigational</td><td>P3</td><td>Security copy</td></tr>
+        <tr><td>risk limits in automated trading meaning</td><td>Informational</td><td>P3</td><td>Why Invest / guide</td></tr>
+        <tr><td>demo mode vs funded account results</td><td>Informational</td><td>P2</td><td>Risk disclosure + FAQ</td></tr>
+        <tr><td>how long does signup take on keen accruvance</td><td>Transactional</td><td>P2</td><td>Home signup copy</td></tr>
+        <tr><td>trading platform with live market overview</td><td>Commercial</td><td>P3</td><td>Resources/tour</td></tr>
+        <tr><td>ethereum ai signal confidence meaning</td><td>Informational</td><td>P3</td><td>Home tour captions</td></tr>
+        <tr><td>do i need trading experience to use ai strategies</td><td>Informational</td><td>P2</td><td>FAQ #2</td></tr>
+        <tr><td>how secure is an online trading platform</td><td>Investigational</td><td>P2</td><td>Security section</td></tr>
+        <tr><td>no code strategy builder for trading</td><td>Transactional</td><td>P3</td><td>How It Works</td></tr>
+        <tr><td>auto trader risk management explained</td><td>Informational</td><td>P3</td><td>Home tour + guide</td></tr>
+        <tr><td>why use demo before live trading crypto</td><td>Informational</td><td>P2</td><td>Signup + guide</td></tr>
+        <tr><td>what markets can i follow on keen accruvance</td><td>Commercial</td><td>P2</td><td>FAQ #6</td></tr>
+        <tr><td>is keen accruvance suitable for all investors</td><td>Investigational</td><td>P2</td><td>Risk disclosure</td></tr>
+        <tr><td>ai trading signals free for beginners</td><td>Transactional</td><td>P3</td><td>Home CTA/Features</td></tr>
+        <tr><td>real time market data without noise trading tool</td><td>Commercial</td><td>P3</td><td>Home body</td></tr>
+      </tbody>
+    </table></div>
+    <p class="bl"><strong>Note on honesty:</strong> avoid ranking bait like “make money trading” or “guaranteed returns” — it contradicts the site’s risk language and invites ad policy/quality problems. Convert the informational intent above into a small “Guides” content hub later (Phase 7).</p>
+  </section>
+
+  <!-- PHASE 3 -->
+  <section class="block" id="p3">
+    <div class="sec-head"><span class="no">PHASE 3</span><h2 class="p">Page-by-page SEO</h2></div>
+    <p class="lead">“Current” = what every URL shares today (verified in <code>index.html</code> and live). Lengths are approximate counts. Title ≈50–60 chars, description ≈140–160 chars. All 13 real routes below are unique; homepage-section URLs (<code>/how-it-works</code> etc.) canonical to <code>/</code> and are not listed separately.</p>
+
+    <div class="tbl"><table>
+      <thead><tr><th>Page</th><th style="width:20%">Recommended title</th><th style="width:30%">Recommended meta description</th><th>Primary / H1 / schema</th><th>Canonical</th></tr></thead>
+      <tbody>
+        <tr><td><b>/</b><br>Home</td><td><b>Keen Accruvance | AI-Powered Crypto Trading Platform &amp; Signals</b><br><span class="toolong">≈60 chars</span></td>
+            <td>Explore Keen Accruvance — an AI-powered trading platform with real-time market intelligence, automated strategies and layered security. Open your free demo account today.<br><span class="toolong">≈175 chars → trim to 158</span></td>
+            <td>Primary: <span class="pill">ai trading platform</span><span class="pill">keen accruvance</span>. H1: keep <i>Smarter Trading. Powered by AI.</i> (add visible supporting H2 intro para that names “AI-powered trading platform”). Schema: Organization + WebSite + FAQPage.</td>
+            <td>https://keen-accruvance.com/</td></tr>
+        <tr><td><b>/about</b></td><td><b>About Keen Accruvance | The Team Behind the AI Platform</b><br><span class="toolong">≈59</span></td>
+            <td>Keen Accruvance pairs AI-driven automation with real-time market intelligence and a security-first mindset — built to make trading calmer, clearer and more confident.<br><span class="toolong">≈168 → trim</span></td>
+            <td>Primary: <span class="pill">trading technology platform</span>. H1 already “About Us”-style → make descriptive. Schema: AboutPage/Organization.</td>
+            <td>/about</td></tr>
+        <tr><td><b>/how-it-works</b></td><td><b>How Keen Accruvance Works — 3 Steps to Your First Strategy</b><br><span class="toolong">≈59</span></td>
+            <td>From sign-up to strategy in three simple steps — create your free demo account, configure an AI strategy and manage every trade from one calm dashboard.<br><span class="toolong">≈156</span></td>
+            <td>Primary: <span class="pill">ai trading platform for beginners</span>. Schema: WebPage (HowTo optional — only if content is step instructions, it is).</td>
+            <td>canonical → / (it’s a homepage section today)</td></tr>
+        <tr><td><b>/why-invest</b></td><td><b>Why Trade with Keen Accruvance? Six Reasons to Choose It</b><br><span class="toolong">≈58</span></td>
+            <td>Real-time intelligence, automation, transparency, multi-device access, security and a beginner-friendly design — the reasons traders choose Keen Accruvance.<br><span class="toolong">≈159</span></td>
+            <td>Primary: <span class="pill">ai trading platform</span><span class="pill">automated trading strategies</span>. Schema: WebPage.</td>
+            <td>canonical → /</td></tr>
+        <tr><td><b>/security</b></td><td><b>Keen Accruvance Security — Encryption, 2FA &amp; 24/7 Monitoring</b><br><span class="toolong">≈60</span></td>
+            <td>Layered protection for your account and data — encryption in transit and at rest, two-factor authentication and continuous monitoring across the platform.<br><span class="toolong">≈154</span></td>
+            <td>Primary: <span class="pill">secure trading platform</span>. Schema: WebPage.</td>
+            <td>canonical → /</td></tr>
+        <tr><td><b>/faq</b></td><td><b>Keen Accruvance FAQ — AI Trading Questions, Answered</b><br><span class="toolong">≈57</span></td>
+            <td>What is Keen Accruvance? Do AI signals work? Is my account safe? Plain answers to the questions traders ask before they start.<br><span class="toolong">≈148</span></td>
+            <td>Primary: <span class="pill">ai trading signals</span>. Schema: FAQPage (6 Q&amp;A). Best rich-result opportunity on the site.</td>
+            <td>canonical → /</td></tr>
+        <tr><td><b>/signup</b></td><td><b>Create Your Free Demo Account | Keen Accruvance</b><br><span class="toolong">≈54</span></td>
+            <td>Open a free demo account in a few minutes — two-factor authentication on from day one, no card or funding needed to explore the platform.<br><span class="toolong">≈147</span></td>
+            <td>Primary: <span class="pill">demo trading account</span><span class="pill">keen accruvance free demo account</span>. Schema: none (form page). Index = yes (it’s your primary conversion URL for organic).</td>
+            <td>/signup</td></tr>
+        <tr><td><b>/contact</b></td><td><b>Contact Keen Accruvance — We Reply Within a Day</b><br><span class="toolong">≈56</span></td>
+            <td>Questions about the platform, your account or risk? Message the Keen Accruvance support team — we respond within a day.</td>
+            <td>Primary: <span class="pill">keen accruvance contact</span>. Schema: ContactPage.</td>
+            <td>/contact</td></tr>
+        <tr><td><b>/privacy</b></td><td><b>Privacy Policy | Keen Accruvance</b> <span class="toolong">≈34</span></td><td>How Keen Accruvance collects, uses and protects your personal information — transparent data practices in line with Australian privacy principles.</td><td>Schema: WebPage (legal).</td><td>/privacy</td></tr>
+        <tr><td><b>/terms</b></td><td><b>Terms &amp; Conditions | Keen Accruvance</b> <span class="toolong">≈36</span></td><td>The terms that govern your use of the Keen Accruvance website, platform and services.</td><td>—</td><td>/terms</td></tr>
+        <tr><td><b>/risk-disclosure</b></td><td><b>Risk Disclosure | Keen Accruvance</b> <span class="toolong">≈36</span></td><td>Understand the risks of trading digital assets before you start — volatility, leverage, automation limits and why past performance never guarantees results.</td><td>Primary: <span class="pill">trading risk</span>. Trust page — links from footer everywhere.</td><td>/risk-disclosure</td></tr>
+        <tr><td><b>/cookie-policy</b></td><td><b>Cookie Policy | Keen Accruvance</b> <span class="toolong">≈34</span></td><td>What cookies the Keen Accruvance website uses and how to control or delete them in your browser.</td><td>—</td><td>/cookie-policy</td></tr>
+        <tr><td><b>/disclaimer</b></td><td><b>Disclaimer | Keen Accruvance</b> <span class="toolong">≈32</span></td><td>Nothing on this site is financial advice. Read the Keen Accruvance disclaimer on demo data, past performance and your responsibility.</td><td>—</td><td>/disclaimer</td></tr>
+        <tr><td><b>/thank-you</b></td><td colspan="4"><b>noindex, follow</b> — set via <code>seo.js</code>. Title can remain “Thank You | Keen Accruvance”. Not listed in the sitemap.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="g">Content &amp; H2 guidance per commercial page</h3>
+    <div class="twocol">
+      <div class="box"><div class="t">Home — add a short “what we are” H2 block</div><div class="d">After the H1 area, one 2–3 sentence paragraph that literally answers “<em>What is Keen Accruvance?</em>” using natural service language (AI-powered trading platform, automated strategies, real-time intelligence, demo-first, 2FA). It doubles as the intro Google reads and feeds the FAQ schema.</div></div>
+      <div class="box"><div class="t">About — expand to 350–500 words</div><div class="d">Add H2s: “What we do”, “Why we built Keen Accruvance”, “Security first”. Explain the product honestly (educational/technology provider, not an adviser). This builds E-E-A-T that every other page inherits.</div></div>
+      <div class="box"><div class="t">How It Works — turn steps into text</div><div class="d">Under the 3 cards add one supporting paragraph per step (why each matters, what “risk limits” are, that strategies can be paused). This is where “how does an ai trading platform work” traffic can be captured.</div></div>
+      <div class="box"><div class="t">Why Invest / Security / FAQ</div><div class="d">These are already strong section pages. Add a 2–3 line intro paragraph under each heading before the cards so the page has a body-text anchor for the primary keyword. Keep tone honest.</div></div>
+    </div>
+    <p class="bl"><strong>Alt text &amp; internal links:</strong> no raster images exist → nothing to alt-tag except the future <code>og.png</code> (not an <code>&lt;img&gt;</code> on-page). Internal-link additions are in Phase 8. H1/H2 hierarchy: one H1 per real page, H2 per block, H3 per card — already satisfied.</p>
+  </section>
+
+  <!-- PHASE 4 -->
+  <section class="block" id="p4">
+    <div class="sec-head"><span class="no">PHASE 4</span><h2 class="p">On-page SEO checklist</h2></div>
+    <div class="tbl"><table class="min">
+      <thead><tr><th>Signal</th><th>Status</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td>Unique H1 per real page</td><td class="ok">✓ mostly</td><td>Keep one H1 per real page; inner section routes inherit homepage — fine once canonicalised.</td></tr>
+        <tr><td>Keyword in H1 / first 100 words</td><td class="warn">△</td><td>Add the “what we are” intro paragraph naming “AI-powered trading platform” near the top of Home (natural, once).</td></tr>
+        <tr><td>Semantic keywords &amp; synonyms</td><td class="ok">✓</td><td>Copy already uses automation, signals, real-time intelligence, security, demo — good natural coverage. Avoid forcing more.</td></tr>
+        <tr><td>Search-intent match</td><td class="warn">△</td><td>Transactional intent (signup/demo) pages have no body text between nav and form — add 2–3 lines to Signup page.</td></tr>
+        <tr><td>Internal linking &amp; anchor text</td><td class="warn">△</td><td>Good nav/footer cross-links exist; add contextual in-content links (Phase 8) with descriptive anchors.</td></tr>
+        <tr><td>Image alt / filenames</td><td class="ok">✓ n/a</td><td>No bitmaps on-page. If you add screenshots later, name them <code>keen-accruvance-dashboard-demo.png</code> and write real alt.</td></tr>
+        <tr><td>SEO-friendly URLs</td><td class="ok">✓ clean</td><td>Short lowercase paths (<code>/how-it-works</code>) — good. Normalise trailing slash (Phase 5).</td></tr>
+        <tr><td>Readability</td><td class="ok">✓</td><td>Short sentences, plain words, honest disclaimers. Keep it.</td></tr>
+        <tr><td>Featured-snippet hooks</td><td class="warn">△</td><td>FAQ Q&amp;As are perfect snippet bait — mark them up (Phase 6) and answer in 40–55 words each.</td></tr>
+        <tr><td>E-E-A-T signals</td><td class="warn">△</td><td>Add: company story depth on /about, clear “not financial advice” stance (present), support email/contact (present), future author names on guides.</td></tr>
+        <tr><td>Clear CTAs</td><td class="ok">✓</td><td>Strong primary + supporting CTAs exist throughout. Avoid adding more.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- PHASE 5 -->
+  <section class="block" id="p5">
+    <div class="sec-head"><span class="no">PHASE 5</span><h2 class="p">Technical SEO — exact files</h2></div>
+    <p class="bl">Apply in this order. Each block is self-contained and safe. Files 1–3 are static (no code risk); file 4 (<code>seo.js</code>) + file 5 (<code>App.jsx</code>) are small JS additions.</p>
+
+    <div class="file"><div><span>FILE — ADD · <b>vercel.json</b> (project root)</span><span>fixes the 404s</span></div>
+<pre>{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
+  ]
+}</pre></div>
+
+    <div class="file"><div><span>FILE — ADD · <b>public/robots.txt</b></span><span>crawler control</span></div>
+<pre>User-agent: *
+Allow: /
+Disallow: /thank-you
+
+Sitemap: https://keen-accruvance.com/sitemap.xml</pre></div>
+
+    <div class="file"><div><span>FILE — ADD · <b>public/sitemap.xml</b></span><span>canonical URL set only</span></div>
+<pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
+  &lt;url&gt;&lt;loc&gt;https://keen-accruvance.com/&lt;/loc&gt;&lt;changefreq&gt;weekly&lt;/changefreq&gt;&lt;priority&gt;1.0&lt;/priority&gt;&lt;/url&gt;
+  &lt;url&gt;&lt;loc&gt;https://keen-accruvance.com/about&lt;/loc&gt;&lt;changefreq&gt;monthly&lt;/changefreq&gt;&lt;priority&gt;0.7&lt;/priority&gt;&lt;/url&gt;
+  &lt;url&gt;&lt;loc&gt;https://keen-accruvance.com/how-it-works&lt;/loc&gt;&lt;changefreq&gt;monthly&lt;/changefreq&gt;&lt;priority&gt;0.8&lt;/priority&gt;&lt;/url&gt;
+  &lt;url&gt;&lt;loc&gt;https://keen-accruvance.com/why-invest&lt;/loc&gt;&lt;changefreq&gt;monthly&lt;/changefreq&gt;&lt;priority&gt;0.7&lt;/priority&gt;&lt;/url&gt;
+  &lt;url&gt;&lt;loc&gt;https://keen-accruvance.com/security&lt;/loc&gt;&lt;changefreq&gt;monthly&lt;/changefreq&gt;&lt;priority&gt;0.6&lt;/priority&gt;&lt;/url&gt;
+  &lt;url&gt;&lt;loc&gt;https://keen-accruvance.com/faq&lt;/loc&gt;&lt;changefreq&gt;monthly&lt;/changefreq&gt;&lt;priority&gt;0.7&lt;/priority&gt;&lt;/url&gt;
+  &lt;url&gt;&lt;loc&gt;https://keen-accruvance.com/signup&lt;/loc&gt;&lt;changefreq&gt;monthly&lt;/changefreq&gt;&lt;priority&gt;0.9&lt;/priority&gt;&lt;/url&gt;
+  &lt;url&gt;&lt;loc&gt;https://keen-accruvance.com/contact&lt;/loc&gt;&lt;changefreq&gt;monthly&lt;/changefreq&gt;&lt;priority&gt;0.5&lt;/priority&gt;&lt;/url&gt;
+  &lt;url&gt;&lt;loc&gt;https://keen-accruvance.com/privacy&lt;/loc&gt;&lt;priority&gt;0.3&lt;/priority&gt;&lt;/url&gt;
+  &lt;url&gt;&lt;loc&gt;https://keen-accruvance.com/terms&lt;/loc&gt;&lt;priority&gt;0.3&lt;/priority&gt;&lt;/url&gt;
+  &lt;url&gt;&lt;loc&gt;https://keen-accruvance.com/risk-disclosure&lt;/loc&gt;&lt;priority&gt;0.3&lt;/priority&gt;&lt;/url&gt;
+  &lt;url&gt;&lt;loc&gt;https://keen-accruvance.com/cookie-policy&lt;/loc&gt;&lt;priority&gt;0.2&lt;/priority&gt;&lt;/url&gt;
+  &lt;url&gt;&lt;loc&gt;https://keen-accruvance.com/disclaimer&lt;/loc&gt;&lt;priority&gt;0.2&lt;/priority&gt;&lt;/url&gt;
+&lt;/urlset&gt;</pre></div>
+
+    <p class="bl"><strong>Why /how-it-works is in the sitemap but canonicalised to /:</strong> it’s a real entry point people land on. Its canonical (set in <code>seo.js</code>) points to <code>/</code>, so Google folds ranking into the homepage while the URL still works. That’s the correct compromise for section deep-links.</p>
+
+    <div class="file"><div><span>FILE — ADD · <b>src/seo.js</b></span><span>per-route title / description / canonical / robots</span></div>
+<pre><span class="c">// Per-route SEO. Run after every path change (see App.jsx below).</span>
+const SITE = 'https://keen-accruvance.com'
+
+const ROUTE_SEO = {
+  '/': {
+    title: 'Keen Accruvance | AI-Powered Trading Platform & Signals',
+    description: 'Explore Keen Accruvance — an AI-powered trading platform with real-time market intelligence, automated strategies and layered security. Open your free demo account today.',
+  },
+  '/about': {
+    title: 'About Keen Accruvance | The Team Behind the AI Platform',
+    description: 'Keen Accruvance pairs AI-driven automation with real-time market intelligence and a security-first mindset — built to make trading calmer and clearer.',
+  },
+  '/how-it-works': {
+    title: 'How Keen Accruvance Works — 3 Steps to Your First Strategy',
+    description: 'From sign-up to strategy in three simple steps. Create your free demo account, configure an AI strategy and manage every trade from one calm dashboard.',
+  },
+  '/why-invest': {
+    title: 'Why Trade with Keen Accruvance? Six Reasons to Choose It',
+    description: 'Real-time intelligence, automation, transparency, multi-device access, security and a beginner-friendly design — the reasons traders choose Keen Accruvance.',
+  },
+  '/security': {
+    title: 'Keen Accruvance Security — Encryption, 2FA &amp; 24/7 Monitoring',
+    description: 'Layered protection for your account and data — encryption in transit and at rest, two-factor authentication and continuous monitoring.',
+  },
+  '/faq': {
+    title: 'Keen Accruvance FAQ — AI Trading Questions, Answered',
+    description: 'What is Keen Accruvance? Do AI signals work? Is my account safe? Plain answers to the questions traders ask before they start.',
+  },
+  '/signup': {
+    title: 'Create Your Free Demo Account | Keen Accruvance',
+    description: 'Open a free demo account in a few minutes — two-factor authentication on from day one, no card or funding needed to explore the platform.',
+  },
+  '/contact': {
+    title: 'Contact Keen Accruvance — We Reply Within a Day',
+    description: 'Questions about the platform, your account or risk? Message the Keen Accruvance support team — we respond within a day.',
+  },
+  '/privacy': { title: 'Privacy Policy | Keen Accruvance', description: 'How Keen Accruvance collects, uses and protects your personal information, in line with Australian privacy principles.' },
+  '/terms': { title: 'Terms &amp; Conditions | Keen Accruvance', description: 'The terms that govern your use of the Keen Accruvance website, platform and services.' },
+  '/risk-disclosure': { title: 'Risk Disclosure | Keen Accruvance', description: 'Understand the risks of trading digital assets before you start — volatility, leverage, automation limits and why past performance never guarantees results.' },
+  '/cookie-policy': { title: 'Cookie Policy | Keen Accruvance', description: 'What cookies the Keen Accruvance website uses and how to control or delete them in your browser.' },
+  '/disclaimer': { title: 'Disclaimer | Keen Accruvance', description: 'Nothing on this site is financial advice. Read the Keen Accruvance disclaimer on demo data, past performance and your responsibility.' },
+}
+
+const NOINDEX = ['/thank-you']   <span class="c">// session / post-conversion pages</span>
+
+const HOME_SECTIONS = ['home', 'signup', 'how-it-works', 'why-invest', 'resources', 'security', 'testimonials', 'features', 'faq', 'cta']
+
+function setMeta(selector, attr, value) {
+  let el = document.head.querySelector(selector)
+  if (!el) { el = document.createElement('meta'); el.setAttribute(attr, ''); document.head.appendChild(el) }
+  if (attr === 'content') el.setAttribute('content', value)
+  el.setAttribute(attr, value)
+}
+function upsertMeta(name, content) {
+  let el = document.head.querySelector(`meta[name="${name}"]`)
+  if (!el) { el = document.createElement('meta'); el.name = name; document.head.appendChild(el) }
+  el.content = content
+}
+function upsertLink(rel, href) {
+  let el = document.head.querySelector(`link[rel="${rel}"]`)
+  if (!el) { el = document.createElement('link'); el.rel = rel; document.head.appendChild(el) }
+  el.href = href
+}
+
+export function applyRouteSeo(path) {
+  const key = ROUTE_SEO[path]
+  const isHomeSection = HOME_SECTIONS.includes(path.replace(/^\//, ''))
+  const cfg = key || (isHomeSection ? ROUTE_SEO['/'] : null)
+
+  <span class="c">// Unknown paths → keep safe, noindex them</span>
+  if (!cfg) { upsertMeta('robots', 'noindex, follow'); return }
+
+  document.title = cfg.title
+  upsertMeta('description', cfg.description)
+  upsertMeta('robots', NOINDEX.includes(path) ? 'noindex, follow' : 'index, follow')
+
+  <span class="c">// Canonical: section deep-links fold into /; real pages canonicalise to themselves</span>
+  const canonical = SITE + (isHomeSection ? '/' : path)
+  upsertLink('canonical', canonical)
+  <span class="c">// Keep social tags in sync (og:url / og:title)</span>
+  let og = document.head.querySelector('meta[property="og:url"]')
+  if (!og) { og = document.createElement('meta'); og.setAttribute('property', 'og:url'); document.head.appendChild(og) }
+  og.setAttribute('content', canonical)
+}</pre></div>
+
+    <div class="file"><div><span>FILE — EDIT · <b>src/App.jsx</b></span><span>two small changes</span></div>
+<pre><span class="c">// 1) import the helper (top of file, with the other imports):</span>
+import { applyRouteSeo } from './seo.js'
+
+<span class="c">// 2) normalise trailing slash in currentPath():</span>
+function currentPath() {
+  const p = window.location.pathname || '/'
+  return p.length &gt; 1 &amp;&amp; p.endsWith('/') ? p.slice(0, -1) : p
+}
+
+<span class="c">// 3) inside the existing useEffect that already runs on every [path] change, add:</span>
+<span class="c">//    (find: useEffect(() => { scrollForPath(path) }, [path])  →  replace with:)</span>
+useEffect(() => {
+  scrollForPath(path)
+  applyRouteSeo(path)
+}, [path])</pre></div>
+
+    <p class="bl"><strong>Optional robustness (do later if you like):</strong> for 100% crawler-proof metadata you can prerender. The cleanest no-architecture-change option is <code>vite-plugin-prerender</code> or moving to Vercel Edge/SSR later. Not required for Google (it executes JS), but it hardens Bing/LinkedIn and first-paint metadata. Keep the static <code>index.html</code> tags as the homepage default so no-crawler-first-load is still correct.</p>
+  </section>
+
+  <!-- PHASE 6 -->
+  <section class="block" id="p6">
+    <div class="sec-head"><span class="no">PHASE 6</span><h2 class="p">Structured data / schema</h2></div>
+    <p class="bl">Appropriate schema for this site: <strong>Organization</strong> (sitewide), <strong>WebSite</strong> (sitewide), <strong>FAQPage</strong> (homepage FAQ block), optional <strong>ContactPage</strong> on /contact and <strong>BreadcrumbList</strong> later. <strong>LocalBusiness: NOT applicable</strong> (global digital service, no physical trading storefront). <strong>Service</strong> schema is optional — add only when the service page copy exists. No invented facts: use only the real email, real name, real product description.</p>
+
+    <div class="file"><div><span>ADD to <b>index.html</b> <code>&lt;head&gt;</code> — Organization + WebSite</span><span>sitewide</span></div>
+<pre>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://keen-accruvance.com/#organization",
+  "name": "Keen Accruvance",
+  "url": "https://keen-accruvance.com/",
+  "logo": "https://keen-accruvance.com/favicon.svg",
+  "email": "support@keen-accruvance.com",
+  "description": "AI-powered trading platform combining automated strategies, real-time market intelligence and security-focused infrastructure."
+}
+&lt;/script&gt;
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://keen-accruvance.com/#website",
+  "url": "https://keen-accruvance.com/",
+  "name": "Keen Accruvance",
+  "publisher": { "@id": "https://keen-accruvance.com/#organization" }
+}
+&lt;/script&gt;</pre></div>
+
+    <div class="file"><div><span>FAQPage JSON-LD — add inside <b>src/seo.js</b> <code>applyRouteSeo</code> for the homepage only</span><span>matches the real visible FAQ</span></div>
+<pre><span class="c">// paste at the top of src/seo.js</span>
+const FAQ_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What is Keen Accruvance?', acceptedAnswer: { '@type': 'Answer', text: 'Keen Accruvance is an AI-powered trading platform that combines automated strategies, real-time market intelligence and security-focused infrastructure in one interface. It is designed to help people follow the markets with more context — not to guarantee returns.' } },
+    { '@type': 'Question', name: 'Do I need prior trading experience?', acceptedAnswer: { '@type': 'Answer', text: 'No. The onboarding guides you through the essentials and the dashboard stays clear whether it is your first week or your fifth year. You can explore with AI signals and demo views before committing to a strategy.' } },
+    { '@type': 'Question', name: 'How do the AI signals work?', acceptedAnswer: { '@type': 'Answer', text: 'Our models process market data such as price action, volume and momentum to produce signal ratings with readable reasoning. Signals are informational tools to support your own decisions — not financial advice and never a promise of profit.' } },
+    { '@type': 'Question', name: 'How is my account and data protected?', acceptedAnswer: { '@type': 'Answer', text: 'We apply encryption in transit and at rest, require strong authentication with two-factor options, and continuously monitor accounts for unusual activity.' } },
+    { '@type': 'Question', name: 'Can I pause or stop automated strategies?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — you are always in control. Any automated strategy can be paused, adjusted or stopped from the dashboard at any time, and your configured risk limits are respected throughout.' } },
+    { '@type': 'Question', name: 'Which markets and assets can I follow?', acceptedAnswer: { '@type': 'Answer', text: 'The platform currently covers major digital assets such as Bitcoin, Ethereum and Solana, with a clear market overview that tracks price, momentum and AI signal ratings for each market.' } },
+  ],
+}
+
+<span class="c">// inside applyRouteSeo, at the end, add the FAQ block ONLY on the homepage (path '/' or a home section):</span>
+document.querySelectorAll('script[data-ka-faq]').forEach((el) =&gt; el.remove())
+if (path === '/' || isHomeSection) {
+  const s = document.createElement('script')
+  s.type = 'application/ld+json'
+  s.dataset.kaFaq = '1'
+  s.textContent = JSON.stringify(FAQ_LD)
+  document.head.appendChild(s)
+}</pre></div>
+    <p class="bl"><strong>Rule of thumb:</strong> never mark up text the user can’t see. FAQ schema mirrors the on-page accordion (visible), Organization facts are all real. That keeps you safe from manual-action risk.</p>
+  </section>
+
+  <!-- PHASE 7 -->
+  <section class="block" id="p7">
+    <div class="sec-head"><span class="no">PHASE 7</span><h2 class="p">Content SEO</h2></div>
+    <div class="tbl"><table>
+      <thead><tr><th>Page</th><th>Current state</th><th>Missing / to add</th><th>Target length</th></tr></thead>
+      <tbody>
+        <tr><td><b>Home</b></td><td>Rich visual sections; light on searchable body text.</td><td>1 intro paragraph answering “what is Keen Accruvance” under the H1; ensure each feature pillar has 1–2 plain-text sentences (they do) containing natural service vocabulary.</td><td>800–1,200 words visible</td></tr>
+        <tr><td><b>About</b></td><td>Short (presentation + link to full /about).</td><td>Add: What we do · Why we built it · Security-first · Who it’s for · “Not financial advice” clarity. Genuine story, no puffery.</td><td>350–600 words</td></tr>
+        <tr><td><b>How It Works</b></td><td>3 cards, strong.</td><td>Add 3 supporting paragraphs (one per step) explaining “why it matters” + a “What you’ll need to start” line.</td><td>450–700 words</td></tr>
+        <tr><td><b>Why Invest</b></td><td>6 reason cards.</td><td>Add 2–3 sentence intro naming benefits in plain language + one line per reason as prose.</td><td>400–600 words</td></tr>
+        <tr><td><b>Security</b></td><td>Defense-in-depth cards.</td><td>Add intro (encryption, 2FA, monitoring) + an “Is AI trading safe?” 2–3 sentence honest answer (snippet bait).</td><td>350–550 words</td></tr>
+        <tr><td><b>FAQ</b></td><td>6 solid Q&amp;A.</td><td>Add 3–4 more questions that mirror real signup hesitations: “Do I need a credit card to try the demo?”, “What happens after I sign up?”, “Is my demo practice account different from live?”, “Do you provide financial advice?”.</td><td>60 words per answer max</td></tr>
+        <tr><td><b>Signup</b></td><td>Bare page (logo + form).</td><td>Add a 2–3 line trust strip: what you get, no card needed, 2FA, demo-first; + “Why try a demo first?” 1 short paragraph.</td><td>120–200 words</td></tr>
+        <tr><td><b>Legal (5)</b></td><td>Complete and well written.</td><td>Nothing missing — legal pages should stay lean. Add H2s are already numbered; fine.</td><td>—</td></tr>
+      </tbody>
+    </table></div>
+    <p class="bl"><strong>Recommended new FAQs (add to the FAQ list + FAQ schema together, wording matches):</strong> “Do I need a credit card to explore the demo?” → No — the demo needs no card or funding. · “What happens after I sign up?” → You get a demo dashboard with sample data to explore signals and strategies before you fund anything. · “Is demo different from live trading?” → Yes — demo uses simulated funds and data for learning; live results will differ. · “Do you provide financial advice?” → No — we provide technology and tools, never personal financial advice.</p>
+  </section>
+
+  <!-- PHASE 8 -->
+  <section class="block" id="p8">
+    <div class="sec-head"><span class="no">PHASE 8</span><h2 class="p">Internal linking strategy</h2></div>
+    <div class="arrows">
+      <div class="ar"><span><b>Home intro</b></span><span class="arrow">→</span><span>/about</span><span>“who we are” · real story → builds E-E-A-T for the brand page</span></div>
+      <div class="ar"><span><b>Home (tour CTA)</b></span><span class="arrow">→</span><span>/signup</span><span>“Open your free demo account” · primary conversion</span></div>
+      <div class="ar"><span><b>Home (FAQ)</b></span><span class="arrow">→</span><span>/contact</span><span>“contact our support team” · already present ✓</span></div>
+      <div class="ar"><span><b>About page</b></span><span class="arrow">→</span><span>/how-it-works</span><span>“see how the platform works” · moves brand-readers to product</span></div>
+      <div class="ar"><span><b>How It Works</b></span><span class="arrow">→</span><span>/security</span><span>“your account &amp; data protection” · answers trust question mid-flow</span></div>
+      <div class="ar"><span><b>Security section</b></span><span class="arrow">→</span><span>/risk-disclosure</span><span>“read the full risk disclosure” · honest, builds trust</span></div>
+      <div class="ar"><span><b>Signup page</b></span><span class="arrow">→</span><span>/risk-disclosure + /terms</span><span>trust anchors beside the form · already present via LeadForm ✓</span></div>
+      <div class="ar"><span><b>Footer (Platform)</b></span><span class="arrow">→</span><span>/how-it-works · /why-invest · /security</span><span>✓ present</span></div>
+      <div class="ar"><span><b>Footer (Company)</b></span><span class="arrow">→</span><span>/about · /faq · /contact</span><span>✓ present</span></div>
+      <div class="ar"><span><b>Footer (Legal)</b></span><span class="arrow">→</span><span>5 legal pages</span><span>✓ present — add /cookie-policy already linked</span></div>
+      <div class="ar"><span><b>Thank-you page</b></span><span class="arrow">→</span><span>/how-it-works</span><span>“see how it works” next-step · present ✓</span></div>
+      <div class="ar"><span><b>Future Guides hub</b></span><span class="arrow">→</span><span>all commercial pages</span><span>contextual “related” links with descriptive anchors</span></div>
+    </div>
+    <p class="bl"><strong>Anchor-text rule:</strong> use natural anchors (“open your free demo account”, “how the platform works”), not repeated “here” or keyword repeats. Most links above already exist — the plan formalises them and fills the two in-content gaps (Home→About, About→How-it-works).</p>
+  </section>
+
+  <!-- PHASE 9 -->
+  <section class="block" id="p9">
+    <div class="sec-head"><span class="no">PHASE 9</span><h2 class="p">Image SEO</h2></div>
+    <p class="bl">The site has <strong>no bitmap images at all</strong> — charts are inline SVG, icons are lucide, and the only asset is <code>public/favicon.svg</code>. This is unusual and excellent for speed: there is nothing to compress, lazy-load, or write alt text for. The real work is the <strong>social OG image</strong>, which must exist as a file for rich link shares.</p>
+    <ul class="tight tick">
+      <li><b>Create <code>public/og.png</code></b> — 1200×630 px, Deep Emerald background, white “Keen Accruvance”, tagline “Smarter Trading. Powered by AI.” Keep under ~300 KB (a 1200×630 PNG is fine).</li>
+      <li><b>Optional <code>public/apple-touch-icon.png</code></b> 180×180.</li>
+      <li>Name assets descriptively (<code>keen-accruvance-og.png</code> ok, but path <code>/og.png</code> is what the tags reference).</li>
+      <li>If you ever add real product screenshots: save as <code>.webp</code> (~1400 px wide), use <code>&lt;img loading="lazy" width height decoding="async"&gt;</code>, real alt text.</li>
+    </ul>
+  </section>
+
+  <!-- PHASE 10 -->
+  <section class="block" id="p10">
+    <div class="sec-head"><span class="no">PHASE 10</span><h2 class="p">Local SEO</h2></div>
+    <p class="bl"><strong>Not applicable.</strong> Keen Accruvance is a global online trading-software brand with no stated physical location, branch, or local service area, and the site content shows no geographic target. <strong>Do not</strong> invent a city, address, or Google Business Profile. Skip LocalBusiness schema and location pages. (If you later open a registered office you want to surface, add Organization address + a LocalBusiness node then — not before.)</p>
+  </section>
+
+  <!-- PHASE 11 -->
+  <section class="block" id="p11">
+    <div class="sec-head"><span class="no">PHASE 11</span><h2 class="p">Social / SERP optimisation</h2></div>
+    <p class="bl">Below is the complete, correct <code>&lt;head&gt;</code> block for the homepage shell (<code>index.html</code>). It replaces the current social meta and adds the missing image/URL fields. Absolute URLs are required — social scrapers won’t follow relative ones.</p>
+    <div class="file"><div><span>FILE — EDIT · <b>index.html</b> — replace the meta block (lines ~6–20) with this</span><span>unique homepage tags live here; per-route tags are set by seo.js</span></div>
+<pre>&lt;title&gt;Keen Accruvance | AI-Powered Trading Platform &amp;amp; Signals&lt;/title&gt;
+&lt;meta name="description" content="Explore Keen Accruvance — an AI-powered trading platform with real-time market intelligence, automated strategies and layered security. Open your free demo account today." /&gt;
+&lt;link rel="canonical" href="https://keen-accruvance.com/" /&gt;
+&lt;meta name="theme-color" content="#087A5B" /&gt;
+
+&lt;meta property="og:type" content="website" /&gt;
+&lt;meta property="og:site_name" content="Keen Accruvance" /&gt;
+&lt;meta property="og:url" content="https://keen-accruvance.com/" /&gt;
+&lt;meta property="og:title" content="Keen Accruvance | AI-Powered Crypto Trading Platform &amp;amp; Signals" /&gt;
+&lt;meta property="og:description" content="AI-powered automation, real-time market intelligence and enterprise-grade security — in one easy-to-use trading platform. Open your free demo account." /&gt;
+&lt;meta property="og:image" content="https://keen-accruvance.com/og.png" /&gt;
+&lt;meta property="og:image:width" content="1200" /&gt;
+&lt;meta property="og:image:height" content="630" /&gt;
+&lt;meta property="og:locale" content="en_US" /&gt;
+
+&lt;meta name="twitter:card" content="summary_large_image" /&gt;
+&lt;meta name="twitter:site" content="@keenaccruvance" /&gt;
+&lt;meta name="twitter:title" content="Keen Accruvance | AI-Powered Trading Platform &amp;amp; Signals" /&gt;
+&lt;meta name="twitter:description" content="Automation, real-time market intelligence and security-first infrastructure — open your free demo account." /&gt;
+&lt;meta name="twitter:image" content="https://keen-accruvance.com/og.png" /&gt;</pre></div>
+    <p class="bl"><strong>Favicon &amp; search appearance:</strong> add the PNG favicon fallback and apple-touch-icon; keep <code>favicon.svg</code> first for modern browsers. Brand SERP: once Organisation schema + a completed (truthful) presence exist, Google builds a knowledge-style panel over time — mainly you need <code>/about</code> to be rich and consistent (name, email, one description used everywhere).</p>
+  </section>
+
+  <!-- PHASE 12 -->
+  <section class="block" id="p12">
+    <div class="sec-head"><span class="no">PHASE 12</span><h2 class="p">Google Search Console setup</h2></div>
+    <div class="steps">
+      <div class="st"><div><div class="t">Fix the 404s first</div><div class="d">Deploy <code>vercel.json</code>, then confirm <code>/about</code> and <code>/how-it-works</code> return 200 (curl or browser).</div></div></div>
+      <div class="st"><div><div class="t">Add robots.txt + sitemap + OG image</div><div class="d">Deploy <code>public/robots.txt</code>, <code>public/sitemap.xml</code>, <code>og.png</code>, and the new <code>index.html</code> head.</div></div></div>
+      <div class="st"><div><div class="t">Add the property</div><div class="d">Open <a href="https://search.google.com/search-console">search.google.com/search-console</a> → Add property → <em>Domain</em> → type <code>keen-accruvance.com</code> (domain-level is best; it covers https + www).</div></div></div>
+      <div class="st"><div><div class="t">Verify ownership</div><div class="d">Simplest on Vercel: DNS TXT record at your DNS provider (TXT <code>google-site-verification=…</code>) — recommended; or HTML-file method → drop the file into <code>public/</code> and deploy.</div></div></div>
+      <div class="st"><div><div class="t">Submit the sitemap</div><div class="d">Sitemaps → Add <code>https://keen-accruvance.com/sitemap.xml</code> → check “Success” (no “Couldn’t fetch”).</div></div></div>
+      <div class="st"><div><div class="t">Request indexing of key URLs</div><div class="d">URL Inspection → paste <code>https://keen-accruvance.com/</code> → “Request indexing”. Repeat for /about, /signup, /how-it-works, /faq.</div></div></div>
+      <div class="st"><div><div class="t">Check coverage weekly</div><div class="d">Indexing → Pages: aim for “Page is indexed” on the ~13 real URLs; investigate “Not found (404)” (the pre-fix backlog) and “Duplicate without canonical”.</div></div></div>
+      <div class="st"><div><div class="t">Inspect a sample of URLs</div><div class="d">Use URL Inspection on /, /about, /signup — confirm the fetched HTML <code>&lt;title&gt;</code> and description are the ones you set and that the page renders content.</div></div></div>
+      <div class="st"><div><div class="t">Monitor Core Web Vitals</div><div class="d">Performance area in GSC after ~4 weeks of traffic; also run Lighthouse (Audits tab) once per release on mobile.</div></div></div>
+      <div class="st"><div><div class="t">Track queries + CTR</div><div class="d">Performance report: filter queries containing “keen accruvance” (brand) vs others; sort by position &amp; CTR weekly.</div></div></div>
+      <div class="st"><div><div class="t">Watch for issues</div><div class="d">Enable email notifications; action any “Indexed, though blocked by robots.txt” (shouldn’t happen) or “Submitted URL has crawl issue”.</div></div></div>
+      <div class="st"><div><div class="t">Measure ranking improvements</div><div class="d">Baseline week 1: record indexed URL count + avg brand position. Compare at weeks 4, 8, 12. Expect brand terms first; non-brand later via the guides hub.</div></div></div>
+    </div>
+  </section>
+
+  <!-- PHASE 13 -->
+  <section class="block" id="p13">
+    <div class="sec-head"><span class="no">PHASE 13</span><h2 class="p">Priority roadmap</h2></div>
+    <div class="road">
+      <div class="r" style="--road:var(--sev-crit)"><div class="top"><span class="chip crit">Priority 1 · fix immediately</span><span class="win">Impact: enables ALL other SEO work</span></div>
+        <ul><li>Add <code>vercel.json</code> SPA rewrite (kills the 404s).</li><li>Add <code>public/robots.txt</code> + <code>public/sitemap.xml</code>.</li><li>Deploy, then verify <code>/about</code> returns 200.</li></ul></div>
+      <div class="r" style="--road:var(--sev-high)"><div class="top"><span class="chip gold">Priority 2 · within 1 week</span><span class="win">Impact: correct page identities in Google</span></div>
+        <ul><li>Add <code>src/seo.js</code> + <code>App.jsx</code> wiring → unique titles, descriptions, canonicals, <code>noindex</code> on /thank-you.</li><li>Update <code>index.html</code> head (title, canonical, OG/Twitter, favicon fallback).</li><li>Create <code>og.png</code> (1200×630) + apple-touch-icon.</li></ul></div>
+      <div class="r" style="--road:var(--emerald)"><div class="top"><span class="chip em">Priority 3 · within 2–4 weeks</span><span class="win">Impact: rich results + trust</span></div>
+        <ul><li>Add Organization + WebSite JSON-LD (index.html) and FAQPage (homepage via seo.js).</li><li>Write the new content: home intro para, About expansion, How-It-Works prose, Security/Why-Invest intros.</li><li>Add 4 new FAQs (+ schema). Verify site in GSC, submit sitemap, request indexing.</li></ul></div>
+      <div class="r" style="--road:var(--gold-deep)"><div class="top"><span class="chip gold">Priority 4 · 1–3 months growth</span><span class="win">Impact: compounds over time</span></div>
+        <ul><li>Launch a small “Guides / learn” hub (4–6 honest, 900–1,400-word posts answering the informational keywords) and internally link it to Home/About/FAQ.</li><li>Route-level code splitting with React.lazy (only if Lighthouse asks).</li><li>Re-crawl quarterly; retire any canonicalised deep-link URLs from nav if you later build real pages for them.</li></ul></div>
+    </div>
+    <p class="bl"><strong>Biggest-impact prediction:</strong> (1) the Vercel rewrite unlocks every inner page — without it nothing else matters; (2) unique titles/canonicals stop self-competition and tell Google which page answers what; (3) FAQ rich snippets give you SERP presence a brand-new site otherwise can’t earn.</p>
+  </section>
+
+  <!-- FINAL -->
+  <section class="block" id="final">
+    <div class="sec-head"><span class="no">OUTPUT</span><h2 class="p">Final output</h2></div>
+
+    <h3 class="g">Top 10 SEO problems</h3>
+    <ul class="tight">
+      <li><b>1.</b> Every inner route returns HTTP 404 (no Vercel SPA fallback).</li>
+      <li><b>2.</b> One shared title/description across all 13+ URLs.</li>
+      <li><b>3.</b> No canonical tags; 11 homepage deep-links would duplicate <code>/</code>.</li>
+      <li><b>4.</b> No sitemap.xml and no robots.txt (both 404).</li>
+      <li><b>5.</b> No structured data (no Organisation, WebSite, or FAQ schema).</li>
+      <li><b>6.</b> Missing og:image / twitter image — shares look broken.</li>
+      <li><b>7.</b> Netlify <code>_redirects</code> shipped to a Vercel host (root cause of #1).</li>
+      <li><b>8.</b> /thank-you and trailing-slash variants create soft-404/indexable thin pages.</li>
+      <li><b>9.</b> Thin body text on Home/About/How-It-Works for non-brand queries.</li>
+      <li><b>10.</b> No content hub to capture the informational long-tail.</li>
+    </ul>
+
+    <h3 class="g">Top 10 opportunities</h3>
+    <ul class="tight">
+      <li><b>1.</b> Fix = one file; entire inner site becomes crawlable overnight.</li>
+      <li><b>2.</b> Clean, honest copy and demo-first positioning = differentiation vs hype competitors.</li>
+      <li><b>3.</b> FAQ rich snippets are achievable within weeks.</li>
+      <li><b>4.</b> No image bloat = already fast mobile page (CWV head-start).</li>
+      <li><b>5.</b> Brand SERP is unclaimed — you can own “keen accruvance” fully.</li>
+      <li><b>6.</b> Clean URL structure and semantic HTML give crawlers an easy job.</li>
+      <li><b>7.</b> Legal + risk transparency is a trust/E-E-A-T asset most rivals lack.</li>
+      <li><b>8.</b> A small guides hub can start earning non-brand traffic in 2–4 months.</li>
+      <li><b>9.</b> Security section maps to real “is AI trading safe” questions.</li>
+      <li><b>10.</b> No local/geo constraints — one global English page set, easy to maintain.</li>
+    </ul>
+
+    <div class="grid2">
+      <div class="box"><div class="t">Recommended page titles</div><div class="d">Full unique titles for all 13 routes are in Phase 3 (with char counts) and as copy-paste code in <code>src/seo.js</code> (Phase 5).</div></div>
+      <div class="box"><div class="t">Recommended meta descriptions</div><div class="d">Unique 140–160 char descriptions for every route — Phase 3 table + ready in <code>src/seo.js</code>.</div></div>
+    </div>
+
+    <h3 class="g">Scores recap</h3>
+    <div class="scores">
+      <div class="score"><div class="n">38</div><div class="l">Overall</div><div class="bar"><i style="width:38%"></i></div></div>
+      <div class="score"><div class="n" style="color:var(--sev-crit)">28</div><div class="l">Technical</div><div class="bar crit"><i style="width:28%"></i></div></div>
+      <div class="score"><div class="n">46</div><div class="l">On-page</div><div class="bar"><i style="width:46%"></i></div></div>
+      <div class="score"><div class="n">58</div><div class="l">Content</div><div class="bar"><i style="width:58%"></i></div></div>
+      <div class="score"><div class="n">72</div><div class="l">Performance*</div><div class="bar"><i style="width:72%"></i></div></div>
+      <div class="score"><div class="n">80</div><div class="l">Mobile</div><div class="bar"><i style="width:80%"></i></div></div>
+    </div>
+    <p class="bl"><em>*Estimates — verify with Lighthouse + GSC CrUX once indexed. Overall score is <strong>38/100 today</strong>; after Priority 1 alone it rises to roughly 55–60, and after Priority 2–3 to ~70.</em></p>
+
+    <h3 class="g">30-day action plan</h3>
+    <div class="tbl"><table class="min">
+      <thead><tr><th>Days</th><th>Action</th><th>Owner</th><th>Done when…</th></tr></thead>
+      <tbody>
+        <tr><td>1–2</td><td>Deploy vercel.json + robots.txt + sitemap.xml</td><td>You/dev</td><td><code>/about</code> returns 200; robots &amp; sitemap return 200</td></tr>
+        <tr><td>3–4</td><td>Create og.png + apple-touch-icon; update index.html head</td><td>You</td><td>facebook.com/sharing/debugger shows a rich card</td></tr>
+        <tr><td>5–7</td><td>Add src/seo.js + App.jsx wiring (titles, canonicals, noindex)</td><td>Dev</td><td>View-source of /about shows its own title + canonical</td></tr>
+        <tr><td>8–10</td><td>Add Organization/WebSite (index.html) + FAQPage (seo.js)</td><td>Dev</td><td>validator.schema.org reports 3 valid JSON-LD blocks</td></tr>
+        <tr><td>11–14</td><td>Write content: home intro, About, How-It-Works, Security/Why-Invest prose</td><td>You</td><td>Pages read naturally at target lengths</td></tr>
+        <tr><td>15–18</td><td>Add 4 new FAQs; mirror in FAQ schema</td><td>You</td><td>FAQ and schema stay 1:1 in sync</td></tr>
+        <tr><td>19–21</td><td>GSC: add property, verify, submit sitemap, request indexing</td><td>You</td><td>Sitemap “Success”, key URLs “URL is on Google”</td></tr>
+        <tr><td>22–25</td><td>Re-crawl (Screaming Frog free / GSC URL inspect) — zero 4xx on real URLs</td><td>You</td><td>Coverage report clean for the 13 URLs</td></tr>
+        <tr><td>26–30</td><td>Baseline metrics in GSC: indexed count, brand queries/CTR. Plan guides hub topics</td><td>You</td><td>Baseline recorded in a sheet</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="g">Files to change — index</h3>
+    <ul class="tight tick">
+      <li><b>ADD</b> <code>vercel.json</code> (root) — SPA rewrite + security headers.</li>
+      <li><b>ADD</b> <code>public/robots.txt</code>, <code>public/sitemap.xml</code>, <code>public/og.png</code>, <code>public/apple-touch-icon.png</code>.</li>
+      <li><b>EDIT</b> <code>index.html</code> — new head (title, canonical, description, full OG + Twitter, favicon fallback, Organization + WebSite JSON-LD).</li>
+      <li><b>ADD</b> <code>src/seo.js</code> — route map + <code>applyRouteSeo()</code> + FAQ schema.</li>
+      <li><b>EDIT</b> <code>src/App.jsx</code> — import + trailing-slash normalise + call <code>applyRouteSeo(path)</code>.</li>
+    </ul>
+    <p class="bl">Delete nothing critical. The Netlify <code>_redirects</code> can stay harmlessly (only active if you ever move to Netlify).</p>
+  </section>
+
+  <footer class="ft">
+    <div class="wrap">
+      Keen Accruvance SEO Audit · compiled 4 Sep 2026 from live checks (Vercel host, 404s reproduced, robots/sitemap 404, shared &lt;head&gt;) and full source review (React 19 · Vite 8 · Tailwind 4 · custom history router). Scores are model estimates; field data (GSC / CrUX) is authoritative once available. This report only recommends — nothing on the site was changed to produce it.
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>

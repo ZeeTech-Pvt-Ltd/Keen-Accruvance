@@ -32,7 +32,7 @@ const NAME_FIELDS = [
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 
-/* Lead-capture endpoint — posts as JSON and replies with
+/* Lead-capture endpoint - posts as JSON and replies with
    { status: 'success', redirectUrl } or an error payload. */
 const ENDPOINT = 'https://theunion-ai.com/dorovio-au.php'
 const OFFER_NAME = 'Keen Accruvance-Site'
@@ -56,7 +56,7 @@ function cleanApiMessage(msg) {
 }
 
 /**
- * The shared lead/contact form — exactly the component used on the homepage
+ * The shared lead/contact form - exactly the component used on the homepage
  * signup section. On a valid submit it posts the details to the lead endpoint
  * and, when accepted, stores them in sessionStorage and routes to /thank-you.
  * `variant` only adjusts footer copy.
@@ -143,7 +143,7 @@ export default function LeadForm({
             }),
           )
         } catch (_) {
-          /* storage unavailable — ignore */
+          /* storage unavailable - ignore */
         }
         window.history.pushState({}, '', '/thank-you')
         window.dispatchEvent(new CustomEvent('ka:nav', { detail: '/thank-you' }))
@@ -164,7 +164,7 @@ export default function LeadForm({
             }
           }
         } catch (_) {
-          /* unparseable — fall through to the top-level message */
+          /* unparseable - fall through to the top-level message */
         }
       }
       setErrors((prev) => ({ ...prev, ...fieldErrors }))
@@ -174,7 +174,7 @@ export default function LeadForm({
     } catch (err) {
       /* Network / CORS failure */
       console.error('Lead submit failed:', err)
-      setServerMsg('We couldn’t reach our servers — please check your connection and try again.')
+      setServerMsg('We couldn’t reach our servers - please check your connection and try again.')
     } finally {
       setSubmitting(false)
     }
@@ -327,7 +327,7 @@ export default function LeadForm({
               <p className="mt-4 flex flex-col items-center gap-1 text-center text-[0.68rem] leading-relaxed text-ink-muted/60">
                 <span className="flex items-center gap-1.5">
                   <ShieldCheck size={13} className="text-forest" aria-hidden="true" />
-                  Demo sign-up — your details are encrypted and never shared.
+                  Demo sign-up - your details are encrypted and never shared.
                 </span>
                 <span className="flex items-center gap-1.5">
                   <KeyRound size={13} className="text-forest" aria-hidden="true" />

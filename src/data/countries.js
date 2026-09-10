@@ -34,7 +34,7 @@ import MX from 'country-flag-icons/react/3x2/MX'
 import TR from 'country-flag-icons/react/3x2/TR'
 
 /**
- * Dial-code directory for the phone field — flags are inline SVG components,
+ * Dial-code directory for the phone field - flags are inline SVG components,
  * so they render offline with zero image requests.
  */
 export const COUNTRIES = [

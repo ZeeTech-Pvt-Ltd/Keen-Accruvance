@@ -178,7 +178,7 @@ export default function Hero() {
             <p className="text-pretty mt-7 max-w-xl text-base leading-relaxed text-ink-muted sm:text-lg">
               Keen Accruvance brings AI-driven automation, real-time market
               intelligence and security-first infrastructure together in one
-              clear, easy-to-use trading platform — so you can trade with more
+              clear, easy-to-use trading platform - so you can trade with more
               context and less guesswork.
             </p>
           </Reveal>
@@ -225,7 +225,7 @@ export default function Hero() {
               </span>
               <span className="leading-tight">
                 <span className="block text-[0.8rem] font-semibold text-ink">AI signal · Buy momentum</span>
-                <span className="block text-[0.7rem] text-ink-muted">BTC — confidence 92%</span>
+                <span className="block text-[0.7rem] text-ink-muted">BTC - confidence 92%</span>
               </span>
             </div>
 

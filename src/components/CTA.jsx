@@ -37,7 +37,7 @@ export default function CTA() {
               </h2>
               <p className="text-pretty mx-auto mt-5 max-w-2xl text-base leading-relaxed text-mint/85 sm:text-lg">
                 Explore a smarter way to understand and manage the markets with AI-powered
-                technology — built for clarity, built for control, built around you.
+                technology - built for clarity, built for control, built around you.
               </p>
 
               <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -50,7 +50,7 @@ export default function CTA() {
               </div>
 
               <p className="mt-8 text-[0.82rem] text-mint/70">
-                Explore the full platform with a demo view — before you trade, see how it feels.
+                Explore the full platform with a demo view - before you trade, see how it feels.
               </p>
               <p className="mt-3 text-[0.68rem] leading-relaxed text-mint/45">
                 Trading involves risk and may not be suitable for all investors. By getting

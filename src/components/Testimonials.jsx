@@ -5,7 +5,7 @@ import Reveal from './Reveal.jsx'
 const ITEMS = [
   {
     quote:
-      'I’ve tried a few platforms, and Keen Accruvance is the first where the AI insights actually made sense to me. It flags what’s moving and explains why — I finally feel informed rather than busy.',
+      'I’ve tried a few platforms, and Keen Accruvance is the first where the AI insights actually made sense to me. It flags what’s moving and explains why - I finally feel informed rather than busy.',
     name: 'Sarah Mitchell',
     role: 'Independent trader · United Kingdom',
     initials: 'SM',
@@ -36,7 +36,7 @@ export default function Testimonials() {
         <SectionHeading
           eyebrow="Testimonials"
           title="Loved by traders who value clarity"
-          lead="From first-time explorers to seasoned market watchers — a glimpse of how traders experience the platform."
+          lead="From first-time explorers to seasoned market watchers - a glimpse of how traders experience the platform."
         />
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
@@ -81,7 +81,7 @@ export default function Testimonials() {
 
         <p className="mt-8 text-center text-[0.72rem] text-ink-muted/70">
           Testimonials reflect individual experiences with the platform and are provided for
-          illustration only — they are not a guarantee of any future outcome.
+          illustration only - they are not a guarantee of any future outcome.
         </p>
       </div>
     </section>

@@ -6,7 +6,7 @@ const VALUES = [
   {
     icon: Bot,
     title: 'AI-powered trading',
-    body: 'Models scan market data and surface patterns, so opportunities are easier to spot — and easier to understand.',
+    body: 'Models scan market data and surface patterns, so opportunities are easier to spot - and easier to understand.',
     chip: 'bg-forest/10 text-forest',
   },
   {
@@ -18,7 +18,7 @@ const VALUES = [
   {
     icon: Workflow,
     title: 'Automated strategies',
-    body: 'Define your rules once and let automation execute trades on your behalf — without watching the screen all day.',
+    body: 'Define your rules once and let automation execute trades on your behalf - without watching the screen all day.',
     chip: 'bg-gold/15 text-gold-deep',
   },
   {
@@ -45,7 +45,7 @@ export default function About() {
             align="left"
             eyebrow="About us"
             title="Intelligent Trading Without the Complexity"
-            lead="Markets today are fast, noisy and always on. Keen Accruvance was built to cut through the noise — pairing capable AI with a clean, human-friendly platform so smarter trading decisions don't require a finance degree or a screen obsession."
+            lead="Markets today are fast, noisy and always on. Keen Accruvance was built to cut through the noise - pairing capable AI with a clean, human-friendly platform so smarter trading decisions don't require a finance degree or a screen obsession."
           />
           <Reveal delay={120}>
             <p className="mt-6 max-w-xl leading-relaxed text-ink-muted">

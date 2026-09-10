@@ -19,37 +19,37 @@ const ROUTE_SEO = {
   '/about': {
     title: 'About Keen Accruvance | The Team Behind the AI Platform',
     description:
-      'Keen Accruvance pairs AI-driven automation with real-time market intelligence and a security-first mindset — built to make trading calmer and clearer.',
+      'Keen Accruvance pairs AI-driven automation with real-time market intelligence and a security-first mindset - built to make trading calmer and clearer.',
   },
   '/how-it-works': {
-    title: 'How Keen Accruvance Works — 3 Steps to Your First Strategy',
+    title: 'How Keen Accruvance Works - 3 Steps to Your First Strategy',
     description:
       'From sign-up to strategy in three simple steps. Create your free demo account, configure an AI strategy and manage every trade from one calm dashboard.',
   },
   '/why-invest': {
     title: 'Why Trade with Keen Accruvance? Six Reasons to Choose It',
     description:
-      'Real-time intelligence, automation, transparency, multi-device access, security and a beginner-friendly design — the reasons traders choose Keen Accruvance.',
+      'Real-time intelligence, automation, transparency, multi-device access, security and a beginner-friendly design - the reasons traders choose Keen Accruvance.',
   },
   '/security': {
-    title: 'Keen Accruvance Security — Encryption, 2FA & 24/7 Monitoring',
+    title: 'Keen Accruvance Security - Encryption, 2FA & 24/7 Monitoring',
     description:
-      'Layered protection for your account and data — encryption in transit and at rest, two-factor authentication and continuous monitoring.',
+      'Layered protection for your account and data - encryption in transit and at rest, two-factor authentication and continuous monitoring.',
   },
   '/faq': {
-    title: 'Keen Accruvance FAQ — AI Trading Questions, Answered',
+    title: 'Keen Accruvance FAQ - AI Trading Questions, Answered',
     description:
       'What is Keen Accruvance? Do AI signals work? Is my account safe? Plain answers to the questions traders ask before they start.',
   },
   '/signup': {
     title: 'Create Your Free Demo Account | Keen Accruvance',
     description:
-      'Open a free demo account in a few minutes — two-factor authentication on from day one, no card or funding needed to explore the platform.',
+      'Open a free demo account in a few minutes - two-factor authentication on from day one, no card or funding needed to explore the platform.',
   },
   '/contact': {
-    title: 'Contact Keen Accruvance — We Reply Within a Day',
+    title: 'Contact Keen Accruvance - We Reply Within a Day',
     description:
-      'Questions about the platform, your account or risk? Message the Keen Accruvance support team — we respond within a day.',
+      'Questions about the platform, your account or risk? Message the Keen Accruvance support team - we respond within a day.',
   },
   '/privacy': {
     title: 'Privacy Policy | Keen Accruvance',
@@ -63,7 +63,7 @@ const ROUTE_SEO = {
   '/risk-disclosure': {
     title: 'Risk Disclosure | Keen Accruvance',
     description:
-      'Understand the risks of trading digital assets before you start — volatility, leverage, automation limits and why past performance never guarantees results.',
+      'Understand the risks of trading digital assets before you start - volatility, leverage, automation limits and why past performance never guarantees results.',
   },
   '/cookie-policy': {
     title: 'Cookie Policy | Keen Accruvance',
@@ -82,7 +82,7 @@ const ROUTE_SEO = {
 }
 
 /* Homepage-section deep-links that render the FULL homepage DOM (not distinct
-   pages) — e.g. /how-it-works scrolls to that section of the homepage. They are
+   pages) - e.g. /how-it-works scrolls to that section of the homepage. They are
    folded into "/" via canonical so they never compete as near-duplicates.
    NB "/signup" is a real standalone page, so it is deliberately NOT here. */
 const FOLD_TO_HOME = new Set([
@@ -100,7 +100,7 @@ const FOLD_TO_HOME = new Set([
 /* Session / post-conversion pages that must never be indexed. */
 const NOINDEX = ['/thank-you']
 
-/* FAQPage schema — answers mirror the six visible questions in Faq.jsx 1:1.
+/* FAQPage schema - answers mirror the six visible questions in Faq.jsx 1:1.
    Only injected on the homepage (path "/" or any homepage-section URL). */
 const FAQ_LD = {
   '@context': 'https://schema.org',
@@ -111,7 +111,7 @@ const FAQ_LD = {
       name: 'What is Keen Accruvance?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Keen Accruvance is an AI-powered trading platform that combines automated strategies, real-time market intelligence and security-focused infrastructure in one interface. It is designed to help people follow the markets with more context — not to guarantee returns.',
+        text: 'Keen Accruvance is an AI-powered trading platform that combines automated strategies, real-time market intelligence and security-focused infrastructure in one interface. It is designed to help people follow the markets with more context - not to guarantee returns.',
       },
     },
     {
@@ -127,7 +127,7 @@ const FAQ_LD = {
       name: 'How do the AI signals work?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Our models process market data such as price action, volume and momentum to produce signal ratings with readable reasoning. Signals are informational tools to support your own decisions — they are not financial advice and never a promise of profit.',
+        text: 'Our models process market data such as price action, volume and momentum to produce signal ratings with readable reasoning. Signals are informational tools to support your own decisions - they are not financial advice and never a promise of profit.',
       },
     },
     {
@@ -143,7 +143,7 @@ const FAQ_LD = {
       name: 'Can I pause or stop automated strategies?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes — you are always in control. Any automated strategy can be paused, adjusted or stopped from the dashboard at any time, and your configured risk limits are respected by the execution engine throughout.',
+        text: 'Yes - you are always in control. Any automated strategy can be paused, adjusted or stopped from the dashboard at any time, and your configured risk limits are respected by the execution engine throughout.',
       },
     },
     {

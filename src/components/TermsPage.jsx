@@ -11,7 +11,7 @@ const SECTIONS = [
     n: '02',
     title: 'What we provide',
     body: [
-      'Keen Accruvance provides AI-assisted trading technology — including market signals, analytics, automated strategies and a connected dashboard. We provide technology and market access tools; we are not a bank, broker, exchange or financial adviser.',
+      'Keen Accruvance provides AI-assisted trading technology - including market signals, analytics, automated strategies and a connected dashboard. We provide technology and market access tools; we are not a bank, broker, exchange or financial adviser.',
       'Nothing on this website constitutes an offer, solicitation or recommendation to buy or sell any financial instrument.',
     ],
   },

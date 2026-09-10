@@ -110,7 +110,7 @@ export default function Security() {
                 </h2>
                 <p className="text-pretty mt-5 max-w-xl text-base leading-relaxed text-mint/80 sm:text-lg">
                   Your account, data and funds sit behind layered, defence-in-depth
-                  protection — engineered in from the first line of code and monitored
+                  protection - engineered in from the first line of code and monitored
                   continuously after.
                 </p>
 

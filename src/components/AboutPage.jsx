@@ -20,14 +20,14 @@ const PILLARS = [
     n: '01',
     icon: Radar,
     title: 'See the market clearly',
-    body: 'Our AI scans live data across major assets and surfaces what actually matters. Every signal arrives with context, so you understand the “why” behind a suggestion — not just a blinking alert.',
+    body: 'Our AI scans live data across major assets and surfaces what actually matters. Every signal arrives with context, so you understand the “why” behind a suggestion - not just a blinking alert.',
     chip: 'bg-mint text-pine',
   },
   {
     n: '02',
     icon: ShieldCheck,
     title: 'Stay protected, by default',
-    body: 'Encryption in transit and at rest, two-factor authentication from day one, and continuous account monitoring. Security is designed in from the ground up — not bolted on later.',
+    body: 'Encryption in transit and at rest, two-factor authentication from day one, and continuous account monitoring. Security is designed in from the ground up - not bolted on later.',
     chip: 'bg-peach text-coral-hover',
   },
   {
@@ -43,7 +43,7 @@ const GUIDES = [
   {
     icon: Eye,
     title: 'Honest by default',
-    body: 'Clear risk messaging, transparent pricing and demo-first onboarding — you explore the platform before you ever fund it.',
+    body: 'Clear risk messaging, transparent pricing and demo-first onboarding - you explore the platform before you ever fund it.',
   },
   {
     icon: ShieldCheck,
@@ -58,7 +58,7 @@ const GUIDES = [
   {
     icon: Gauge,
     title: 'Kept deliberately simple',
-    body: 'Powerful tools wrapped in a calm, uncluttered interface — so advanced trading never has to feel intimidating.',
+    body: 'Powerful tools wrapped in a calm, uncluttered interface - so advanced trading never has to feel intimidating.',
   },
 ]
 
@@ -89,7 +89,7 @@ function HeroVisual() {
         aria-hidden="true"
         className="absolute left-1/2 top-1/2 -z-10 aspect-square w-[118%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-forest/15"
       />
-      {/* floating pill — transparency */}
+      {/* floating pill - transparency */}
       <div
         className="absolute -left-2 top-4 z-10 hidden animate-float items-center gap-2 rounded-full border border-white/70 bg-paper/85 py-2 pl-2.5 pr-4 shadow-card backdrop-blur sm:flex lg:-left-6 lg:top-[-18px]"
       >
@@ -98,7 +98,7 @@ function HeroVisual() {
         </span>
         <span className="text-[0.76rem] font-semibold text-ink">Transparent risk messaging</span>
       </div>
-      {/* floating pill — demo-first */}
+      {/* floating pill - demo-first */}
       <div
         className="absolute -right-1 top-1/3 z-10 hidden animate-float-slow items-center gap-2 rounded-full border border-white/70 bg-paper/85 py-2 pl-2.5 pr-4 shadow-card backdrop-blur sm:flex lg:-right-5"
         style={{ animationDelay: '1.4s' }}
@@ -108,7 +108,7 @@ function HeroVisual() {
         </span>
         <span className="text-[0.76rem] font-semibold text-ink">Demo-first onboarding</span>
       </div>
-      {/* floating pill — 2FA */}
+      {/* floating pill - 2FA */}
       <div
         className="absolute bottom-10 -right-1 z-10 hidden animate-float-slower items-center gap-2 rounded-full border border-white/70 bg-paper/85 py-2 pl-2.5 pr-4 shadow-card backdrop-blur sm:flex lg:-right-6 lg:bottom-12"
         style={{ animationDelay: '0.7s' }}
@@ -134,7 +134,7 @@ function HeroVisual() {
         </div>
 
         <p className="mt-5 font-display text-[1.08rem] italic leading-relaxed text-pine">
-          “We design for the trader who wants power — without the overwhelm.”
+          “We design for the trader who wants power - without the overwhelm.”
         </p>
 
         <div className="mt-6 space-y-2.5">
@@ -170,7 +170,7 @@ export default function AboutPage() {
     <>
       {/* ---- Hero (same feel as the homepage hero) ---- */}
       <section className="relative overflow-hidden">
-        {/* background décor — mirrored from the homepage hero */}
+        {/* background décor - mirrored from the homepage hero */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-grid mask-fade-radial opacity-70" />
           <div className="absolute -top-32 right-[-12%] size-[34rem] animate-drift rounded-full bg-[radial-gradient(closest-side,rgba(232,244,239,0.9),transparent)]" />
@@ -196,7 +196,7 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="text-pretty mt-7 max-w-xl text-base leading-relaxed text-ink-muted sm:text-lg">
-              Keen Accruvance pairs capable AI with a clean, human-friendly platform — so
+              Keen Accruvance pairs capable AI with a clean, human-friendly platform - so
               smarter trading decisions don’t require a finance degree or an obsession with
               the screen.
             </p>
@@ -238,7 +238,7 @@ export default function AboutPage() {
           <div className="space-y-5 leading-relaxed text-ink-muted">
             <p>
               Keen Accruvance started with a simple frustration: trading platforms kept
-              getting more powerful — and, at the same time, more intimidating. Capable tools
+              getting more powerful - and, at the same time, more intimidating. Capable tools
               were hidden behind jargon, and the guidance traders actually needed was buried
               beneath blinking dashboards and cluttered charts.
             </p>
@@ -249,8 +249,8 @@ export default function AboutPage() {
               workspace.
             </p>
             <p>
-              Today traders around the world — including a growing community across
-              Australia — use Keen Accruvance to follow the markets with more clarity, less
+              Today traders around the world - including a growing community across
+              Australia - use Keen Accruvance to follow the markets with more clarity, less
               noise and greater confidence in the technology behind every decision.
             </p>
           </div>
@@ -302,7 +302,7 @@ export default function AboutPage() {
             </span>
             <blockquote className="mt-7 text-balance text-2xl font-medium leading-[1.3] text-white sm:text-3xl sm:leading-[1.28]">
               “Great trading technology should make you feel more{' '}
-              <em className="text-mint-deep">in control</em> — not more overwhelmed.”
+              <em className="text-mint-deep">in control</em> - not more overwhelmed.”
             </blockquote>
             <figcaption className="mt-7 font-mono text-[0.66rem] uppercase tracking-[0.18em] text-mint/60">
               The Keen Accruvance team
@@ -321,8 +321,8 @@ export default function AboutPage() {
                 What guides us every day
               </h2>
               <p className="mt-5 max-w-md leading-relaxed text-ink-muted">
-                These aren’t words on a wall. Every product decision — from how a signal is
-                explained to when a confirmation is required — is weighed against them.
+                These aren’t words on a wall. Every product decision - from how a signal is
+                explained to when a confirmation is required - is weighed against them.
               </p>
             </div>
             <div className="grid gap-x-8 gap-y-7 sm:grid-cols-2">
@@ -355,8 +355,8 @@ export default function AboutPage() {
               Ready for a calmer way to trade?
             </h2>
             <p className="text-pretty mx-auto mt-4 max-w-xl text-[0.98rem] leading-relaxed text-mint/80">
-              Open a free demo account in a few minutes and explore the platform — signals,
-              automation and all — before you ever decide to fund it.
+              Open a free demo account in a few minutes and explore the platform - signals,
+              automation and all - before you ever decide to fund it.
             </p>
             <div className="mt-9 flex flex-wrap items-center justify-center gap-3.5">
               <a

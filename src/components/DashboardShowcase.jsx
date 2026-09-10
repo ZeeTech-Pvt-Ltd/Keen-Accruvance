@@ -33,7 +33,7 @@ const SIGNALS = [
     tone: 'text-forest bg-forest/10',
     title: 'Breakout detected',
     market: 'ETH/USD',
-    note: 'Uptrend confirmed above range — confidence 92%',
+    note: 'Uptrend confirmed above range - confidence 92%',
     time: 'just now',
   },
   {
@@ -41,7 +41,7 @@ const SIGNALS = [
     tone: 'text-gold-deep bg-gold/15',
     title: 'Range-bound conditions',
     market: 'BTC/USD',
-    note: 'Sideways momentum — strategy holding position',
+    note: 'Sideways momentum - strategy holding position',
     time: '2 min ago',
   },
   {
@@ -49,7 +49,7 @@ const SIGNALS = [
     tone: 'text-coral bg-coral/10',
     title: 'Momentum easing',
     market: 'SOL/USD',
-    note: 'Volume declining — take-profit risk level raised',
+    note: 'Volume declining - take-profit risk level raised',
     time: '8 min ago',
   },
 ]
@@ -252,7 +252,7 @@ export default function DashboardShowcase() {
         <SectionHeading
           eyebrow="Platform tour"
           title="One calm dashboard for every market moment"
-          lead="Portfolio, live prices, charts and AI signals in a single, beautifully organised view — engineered to feel effortless, even at 3am during a volatile session."
+          lead="Portfolio, live prices, charts and AI signals in a single, beautifully organised view - engineered to feel effortless, even at 3am during a volatile session."
         />
 
         <Reveal delay={120} className="mt-14">

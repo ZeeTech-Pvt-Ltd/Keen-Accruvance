@@ -11,9 +11,9 @@ const SECTIONS = [
     n: '02',
     title: 'Information we collect',
     body: [
-      'Account details — your name, email address, phone number and country when you sign up or request access.',
-      'Usage information — pages you view, device and browser type, approximate location and how you interact with the platform, collected to improve our services.',
-      'Communications — anything you send us through our contact channels or when you report a problem.',
+      'Account details - your name, email address, phone number and country when you sign up or request access.',
+      'Usage information - pages you view, device and browser type, approximate location and how you interact with the platform, collected to improve our services.',
+      'Communications - anything you send us through our contact channels or when you report a problem.',
       'Please do not enter real payment card details, government ID numbers or other sensitive financial information anywhere on this demo site unless you are explicitly asked to do so.',
     ],
   },
@@ -95,7 +95,7 @@ export default function PrivacyPage() {
         <p className="text-pretty mt-6 text-base leading-relaxed text-ink-muted">
           Keen Accruvance provides AI-assisted trading technology. This policy describes what we do with
           the personal information you share with us. Trading digital assets involves risk, and this page
-          relates only to how we handle your data — it is not financial advice.
+          relates only to how we handle your data - it is not financial advice.
         </p>
 
         <div className="mt-12">

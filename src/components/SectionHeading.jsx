@@ -1,5 +1,5 @@
 /**
- * Consistent section header — editorial style: mono eyebrow rule + serif title.
+ * Consistent section header - editorial style: mono eyebrow rule + serif title.
  * `align` left|center · `dark` switches tokens for dark-green sections.
  */
 export default function SectionHeading({

@@ -23,7 +23,7 @@ export default function ThankYouPage() {
   const title = !sub
     ? 'Thanks for stopping by'
     : isContact
-      ? 'Message sent — we’ll be in touch'
+      ? 'Message sent - we’ll be in touch'
       : 'Your demo account is on its way'
   const eyebrow = !sub ? 'Welcome' : isContact ? 'Message received' : 'You’re all set'
   const body = !sub ? (
@@ -42,7 +42,7 @@ export default function ThankYouPage() {
     <>
       Thanks{name ? `, ${name}` : ''}! We’ve sent a confirmation link to{' '}
       <span className="font-semibold text-forest">{sub.email}</span>. Follow it to finish setting
-      up your free demo account — no card required, demo funds only.
+      up your free demo account - no card required, demo funds only.
     </>
   )
 

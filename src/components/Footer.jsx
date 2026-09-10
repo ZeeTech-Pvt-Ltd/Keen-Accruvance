@@ -42,7 +42,7 @@ export default function Footer() {
           <Logo tone="light" />
           <p className="mt-5 text-sm leading-relaxed text-mint/60">
             Keen Accruvance pairs AI-driven automation with real-time market
-            intelligence and security-focused infrastructure — built to make
+            intelligence and security-focused infrastructure - built to make
             trading calmer, clearer and more confident.
           </p>
           <ul className="mt-6 space-y-2.5 text-sm">
@@ -93,7 +93,7 @@ export default function Footer() {
             Trading digital assets and related products carries a high level of risk and may not
             be suitable for all investors. Market prices are volatile and you may lose some or all
             of the capital you deposit. Keen Accruvance provides trading technology, tools and
-            market access — it does not provide investment, legal or tax advice, and nothing on
+            market access - it does not provide investment, legal or tax advice, and nothing on
             this website is an offer or solicitation to buy or sell any financial instrument.
             AI-generated signals and automated strategies are provided for informational purposes;
             past performance never guarantees future results. Please read our full{' '}

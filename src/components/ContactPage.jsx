@@ -5,7 +5,7 @@ const WAYS = [
   {
     icon: Mail,
     title: 'Email us',
-    body: 'support@keen-accruvance.com — for account help, platform questions or anything else.',
+    body: 'support@keen-accruvance.com - for account help, platform questions or anything else.',
     href: 'mailto:support@keen-accruvance.com',
   },
   {
@@ -39,7 +39,7 @@ export default function ContactPage() {
               Contact us
             </p>
             <h1 className="mt-6 text-4xl font-semibold leading-[1.05] text-ink sm:text-5xl">
-              Talk to a real person —{' '}
+              Talk to a real person -{' '}
               <span className="italic text-forest">we reply fast.</span>
             </h1>
             <p className="text-pretty mx-auto mt-5 max-w-xl text-base leading-relaxed text-ink-muted sm:text-lg">
@@ -83,7 +83,7 @@ export default function ContactPage() {
 
             <div className="mt-6 flex items-center gap-2.5 rounded-2xl border border-forest/10 bg-mint/50 px-5 py-4 text-[0.85rem] leading-relaxed text-pine">
               <ShieldCheck size={18} className="shrink-0 text-forest" aria-hidden="true" />
-              Your message stays private — we never share your details with third parties.
+              Your message stays private - we never share your details with third parties.
             </div>
           </div>
 
