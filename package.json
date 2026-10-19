@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "mirror-old": "node mirror-old.mjs"
+    "start": "next start"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.3",
