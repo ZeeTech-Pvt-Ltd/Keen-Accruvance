@@ -1,3 +1,5 @@
+'use client'
+
 import { useId } from 'react'
 
 /* ------------------------------------------------------------------ */
@@ -78,7 +80,6 @@ function smoothPath(pts) {
 /*  Components                                                          */
 /* ------------------------------------------------------------------ */
 
-const noop = () => {}
 
 /** Flexible area/line SVG. `w`/`h` are the viewBox units; renders responsive. */
 export function Spark({
@@ -122,7 +123,7 @@ export function Spark({
           <stop offset="100%" stopColor={stroke} stopOpacity="0" />
         </linearGradient>
       </defs>
-      {fill && <path d={area} fill={`url(#${gid})`} onError={noop} />}
+      {fill && <path d={area} fill={`url(#${gid})`} />}
       <path d={line} fill="none" stroke={stroke} strokeWidth={strokeWidth} strokeLinecap="round" />
       {dot && (
         <>

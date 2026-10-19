@@ -63,7 +63,10 @@ export default function DisclaimerPage() {
       <div className="mx-auto max-w-3xl">
         <p className="eyebrow text-forest">Legal</p>
         <h1 className="mt-5 text-4xl font-semibold leading-[1.05] text-ink sm:text-5xl">Disclaimer</h1>
-        <p className="mt-3 font-mono text-[0.72rem] uppercase tracking-[0.16em] text-ink-muted">
+        <p
+          suppressHydrationWarning
+          className="mt-3 font-mono text-[0.72rem] uppercase tracking-[0.16em] text-ink-muted"
+        >
           Last updated · {new Date().toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' })}
         </p>
         <p className="text-pretty mt-6 text-base leading-relaxed text-ink-muted">

@@ -1,4 +1,7 @@
+'use client'
+
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import Logo from './Logo.jsx'
 import Button from './Button.jsx'
@@ -46,12 +49,12 @@ export default function Navbar() {
         <ul className="hidden items-center gap-1 lg:flex">
           {LINKS.map((l) => (
             <li key={l.href}>
-              <a
+              <Link
                 href={l.href}
                 className="relative rounded-full px-3 py-2 text-[0.92rem] font-medium text-ink-muted transition-colors duration-200 after:absolute after:inset-x-3 after:-bottom-0.5 after:h-[2px] after:origin-left after:scale-x-0 after:rounded-full after:bg-forest after:transition-transform after:duration-200 hover:text-ink hover:after:scale-x-100"
               >
                 {l.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -85,13 +88,13 @@ export default function Navbar() {
         <ul className="wrap flex flex-col gap-1 py-4">
           {LINKS.map((l) => (
             <li key={l.href}>
-              <a
+              <Link
                 href={l.href}
                 onClick={() => setOpen(false)}
                 className="block rounded-xl px-4 py-3 text-base font-medium text-ink transition-colors hover:bg-forest/5 hover:text-forest"
               >
                 {l.label}
-              </a>
+              </Link>
             </li>
           ))}
           <li className="mt-2 px-2 pb-2">

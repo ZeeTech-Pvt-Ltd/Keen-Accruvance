@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { ChevronDown, Search, Check } from 'lucide-react'
 import { COUNTRIES, POPULAR, getCountry } from '../data/countries.js'

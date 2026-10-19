@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useRef, useState } from 'react'
 import { Users, Globe2, Wallet, Clock3 } from 'lucide-react'
 import Reveal from './Reveal.jsx'

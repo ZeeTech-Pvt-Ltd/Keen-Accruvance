@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 import { Sparkles, CheckCircle2, ShieldCheck } from 'lucide-react'
 import Button from './Button.jsx'

@@ -168,7 +168,10 @@ export default function RiskDisclosurePage() {
         <h1 className="mt-6 text-4xl font-semibold leading-[1.05] text-ink sm:text-5xl">
           Risk Disclosure
         </h1>
-        <p className="mt-4 font-mono text-xs uppercase tracking-[0.14em] text-ink-muted/70">
+        <p
+          suppressHydrationWarning
+          className="mt-4 font-mono text-xs uppercase tracking-[0.14em] text-ink-muted/70"
+        >
           Last updated: {new Date().toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}
         </p>
 

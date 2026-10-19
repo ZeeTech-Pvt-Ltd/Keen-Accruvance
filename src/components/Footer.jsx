@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Logo from './Logo.jsx'
 import { Mail, ShieldCheck, Globe } from 'lucide-react'
 
@@ -74,12 +75,12 @@ export default function Footer() {
             <ul className="mt-5 space-y-3">
               {col.links.map((l) => (
                 <li key={l.label}>
-                  <a
+                  <Link
                     href={l.href}
                     className="text-sm transition-colors duration-200 hover:text-white"
                   >
                     {l.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

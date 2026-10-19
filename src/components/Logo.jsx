@@ -1,10 +1,12 @@
+import Link from 'next/link'
+
 /** Keen Accruvance wordmark - `tone` adapts it for light and dark surfaces. */
 export default function Logo({ tone = 'dark', className = '' }) {
   const name = tone === 'dark' ? 'text-ink' : 'text-white'
   const sub = tone === 'dark' ? 'text-forest' : 'text-mint'
 
   return (
-    <a
+    <Link
       href="/"
       aria-label="Keen Accruvance - home"
       className={`group inline-flex items-center gap-2.5 ${className}`}
@@ -25,6 +27,6 @@ export default function Logo({ tone = 'dark', className = '' }) {
       <span className="font-display text-[1.06rem] font-bold tracking-tight">
         <span className={name}>Keen</span> <span className={sub}>Accruvance</span>
       </span>
-    </a>
+    </Link>
   )
 }

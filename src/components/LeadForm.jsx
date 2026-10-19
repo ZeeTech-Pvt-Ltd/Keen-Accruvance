@@ -1,4 +1,7 @@
+'use client'
+
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import {
   ShieldCheck,
   ArrowRight,
@@ -67,6 +70,7 @@ export default function LeadForm({
   submitLabel = 'Create my account',
   variant = 'signup',
 }) {
+  const router = useRouter()
   const [values, setValues] = useState({
     firstName: '',
     lastName: '',
@@ -145,8 +149,7 @@ export default function LeadForm({
         } catch (_) {
           /* storage unavailable - ignore */
         }
-        window.history.pushState({}, '', '/thank-you')
-        window.dispatchEvent(new CustomEvent('ka:nav', { detail: '/thank-you' }))
+        router.push('/thank-you')
         return
       }
 

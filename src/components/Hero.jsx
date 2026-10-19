@@ -3,11 +3,11 @@ import Button from './Button.jsx'
 import Reveal from './Reveal.jsx'
 import { Spark, SparkMini, seriesTrendMild, sparkBtc, sparkEth, sparkSol } from './charts.jsx'
 
-/* --- tiny branded coin monograms (decorative tickers) --------------- */
+/* --- real coin logos (decorative tickers) --------------------------- */
 const COINS = {
-  BTC: { letter: 'B', chip: 'bg-[#fdeecb] text-[#97680a] ring-1 ring-inset ring-gold/50' },
-  ETH: { letter: 'E', chip: 'bg-[#eae6ff] text-[#5a4abe] ring-1 ring-inset ring-[#c6bcf2]' },
-  SOL: { letter: 'S', chip: 'bg-[#dceff5] text-[#0b7077] ring-1 ring-inset ring-[#a8dbe6]' },
+  BTC: { icon: '/coins/btc.svg' },
+  ETH: { icon: '/coins/eth.svg' },
+  SOL: { icon: '/coins/sol.svg' },
 }
 
 function CoinRow({ ticker, name, data, change }) {
@@ -15,9 +15,7 @@ function CoinRow({ ticker, name, data, change }) {
   const up = change >= 0
   return (
     <div className="flex items-center gap-2.5 rounded-xl px-1.5 py-1.5">
-      <span className={`grid size-6 shrink-0 place-items-center rounded-full text-[0.66rem] font-bold ${c.chip}`}>
-        {c.letter}
-      </span>
+      <img src={c.icon} alt="" width={24} height={24} className="size-6 shrink-0" />
       <span className="w-16 leading-none">
         <span className="block font-sans text-[0.72rem] font-semibold text-ink">{ticker}</span>
         <span className="block text-[0.58rem] text-ink-muted">{name}</span>
@@ -120,22 +118,30 @@ function PhoneMock() {
         </div>
       </div>
 
-      {/* floating medallions */}
-      <div className="absolute -right-5 -top-5 grid size-12 animate-float place-items-center rounded-full bg-gradient-to-br from-gold to-gold-deep font-sans text-lg font-bold text-white shadow-xl ring-4 ring-white/60 sm:-right-8 sm:size-14">
-        B
-      </div>
-      <div
-        className="absolute -left-4 top-1/3 grid size-10 animate-float-slow place-items-center rounded-full bg-gradient-to-br from-[#efe8ff] to-[#d6ccff] font-sans text-base font-bold text-[#5a4abe] shadow-xl ring-4 ring-white/60 sm:-left-9 sm:size-12"
+      {/* floating coin medallions */}
+      <img
+        src={COINS.BTC.icon}
+        alt=""
+        width={56}
+        height={56}
+        className="absolute -right-5 -top-5 size-12 animate-float rounded-full shadow-xl ring-4 ring-white/60 sm:-right-8 sm:size-14"
+      />
+      <img
+        src={COINS.ETH.icon}
+        alt=""
+        width={48}
+        height={48}
+        className="absolute -left-4 top-1/3 size-10 animate-float-slow rounded-full shadow-xl ring-4 ring-white/60 sm:-left-9 sm:size-12"
         style={{ animationDelay: '1.2s' }}
-      >
-        E
-      </div>
-      <div
-        className="absolute -bottom-4 right-8 grid size-9 animate-float-slower place-items-center rounded-full bg-gradient-to-br from-mint to-mint-deep font-sans text-sm font-bold text-pine shadow-xl ring-4 ring-white/60"
+      />
+      <img
+        src={COINS.SOL.icon}
+        alt=""
+        width={44}
+        height={44}
+        className="absolute -bottom-4 right-8 size-9 animate-float-slower rounded-full shadow-xl ring-4 ring-white/60"
         style={{ animationDelay: '0.6s' }}
-      >
-        S
-      </div>
+      />
     </div>
   )
 }

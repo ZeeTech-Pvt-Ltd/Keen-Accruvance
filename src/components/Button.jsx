@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
 const sizes = {
@@ -47,6 +48,15 @@ export default function Button({
   )
 
   if (href) {
+    /* Client-side navigation for internal routes; plain anchors for hashes,
+       mailto/tel and external links. */
+    if (href.startsWith('/') && !href.startsWith('//')) {
+      return (
+        <Link href={href} className={cls} aria-label={ariaLabel}>
+          {inner}
+        </Link>
+      )
+    }
     return (
       <a href={href} className={cls} aria-label={ariaLabel}>
         {inner}
