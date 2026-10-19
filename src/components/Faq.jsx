@@ -73,7 +73,7 @@ function Item({ q, a, open, onToggle, id }) {
 }
 
 export default function Faq() {
-  const [open, setOpen] = useState(0)
+  const [open, setOpen] = useState(-1)
 
   return (
     <section id="faq" className="mt-28 scroll-mt-24 lg:mt-36">

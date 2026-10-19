@@ -6,6 +6,7 @@ const COLUMNS = [
     heading: 'Platform',
     links: [
       { label: 'How It Works', href: '/how-it-works' },
+      { label: 'Features', href: '/features' },
       { label: 'Why Invest', href: '/why-invest' },
       { label: 'Security', href: '/security' },
     ],
@@ -14,6 +15,7 @@ const COLUMNS = [
     heading: 'Company',
     links: [
       { label: 'About Us', href: '/about' },
+      { label: 'Reviews', href: '/reviews' },
       { label: 'FAQ', href: '/faq' },
       { label: 'Contact Us', href: '/contact' },
     ],
@@ -104,7 +106,6 @@ export default function Footer() {
           </p>
           <div className="mt-6 flex flex-col items-start justify-between gap-3 text-[0.78rem] text-mint/40 sm:flex-row sm:items-center">
             <p>© {new Date().getFullYear()} Keen Accruvance. All rights reserved.</p>
-            <p>Available worldwide · 98+ countries served</p>
           </div>
         </div>
       </div>

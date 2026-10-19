@@ -7,7 +7,7 @@ const LINKS = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
   { label: 'How It Works', href: '/how-it-works' },
-  { label: 'Why Invest', href: '/why-invest' },
+  { label: 'Reviews', href: '/reviews' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Contact', href: '/contact' },
 ]
@@ -48,7 +48,7 @@ export default function Navbar() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="relative rounded-full px-3.5 py-2 text-[0.92rem] font-medium text-ink-muted transition-colors duration-200 after:absolute after:inset-x-3.5 after:-bottom-0.5 after:h-[2px] after:origin-left after:scale-x-0 after:rounded-full after:bg-forest after:transition-transform after:duration-200 hover:text-ink hover:after:scale-x-100"
+                className="relative rounded-full px-3 py-2 text-[0.92rem] font-medium text-ink-muted transition-colors duration-200 after:absolute after:inset-x-3 after:-bottom-0.5 after:h-[2px] after:origin-left after:scale-x-0 after:rounded-full after:bg-forest after:transition-transform after:duration-200 hover:text-ink hover:after:scale-x-100"
               >
                 {l.label}
               </a>

@@ -18,6 +18,9 @@ import Footer from './components/Footer.jsx'
 import PrivacyPage from './components/PrivacyPage.jsx'
 import AboutPage from './components/AboutPage.jsx'
 import ContactPage from './components/ContactPage.jsx'
+import ReviewsPage from './components/ReviewsPage.jsx'
+import HowItWorksPage from './components/HowItWorksPage.jsx'
+import FeaturesPage from './components/FeaturesPage.jsx'
 import TermsPage from './components/TermsPage.jsx'
 import RiskDisclosurePage from './components/RiskDisclosurePage.jsx'
 import CookiePolicyPage from './components/CookiePolicyPage.jsx'
@@ -30,6 +33,9 @@ import NotFoundPage from './components/NotFoundPage.jsx'
 const PAGES = {
   '/about': AboutPage,
   '/contact': ContactPage,
+  '/reviews': ReviewsPage,
+  '/how-it-works': HowItWorksPage,
+  '/features': FeaturesPage,
   '/privacy': PrivacyPage,
   '/terms': TermsPage,
   '/risk-disclosure': RiskDisclosurePage,
@@ -42,16 +48,16 @@ const PAGES = {
 /* Pages that render bare - no Navbar/Footer chrome, only their own layout */
 const BARE_ROUTES = new Set(['/signup'])
 
-/* Homepage sections exposed as clean URLs, e.g. keen-accruvance.com/how-it-works */
+/* Homepage sections exposed as clean URLs, e.g. keen-accruvance.com/why-invest.
+   Sections that became real pages (/how-it-works, /features) are deliberately
+   absent, so those URLs render their own page instead of the homepage. */
 const HOME_SECTIONS = new Set([
   'home',
   'signup',
-  'how-it-works',
   'why-invest',
   'resources',
   'security',
   'testimonials',
-  'features',
   'faq',
   'cta',
 ])

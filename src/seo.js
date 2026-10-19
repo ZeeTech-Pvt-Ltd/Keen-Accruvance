@@ -26,6 +26,11 @@ const ROUTE_SEO = {
     description:
       'From sign-up to strategy in three simple steps. Create your free demo account, configure an AI strategy and manage every trade from one calm dashboard.',
   },
+  '/features': {
+    title: 'Keen Accruvance Features | AI Signals & Automation',
+    description:
+      'Explore the Keen Accruvance features: AI signals with clear reasoning, automated strategies, risk controls and layered security. Start your free demo.',
+  },
   '/why-invest': {
     title: 'Why Trade with Keen Accruvance? Six Reasons to Choose It',
     description:
@@ -45,6 +50,11 @@ const ROUTE_SEO = {
     title: 'Create Your Free Demo Account | Keen Accruvance',
     description:
       'Open a free demo account in a few minutes - two-factor authentication on from day one, no card or funding needed to explore the platform.',
+  },
+  '/reviews': {
+    title: 'Keen Accruvance Reviews | What Traders Say',
+    description:
+      'See what traders say about Keen Accruvance: clear signals, simple automation and support that replies. Read the reviews and start your demo.',
   },
   '/contact': {
     title: 'Contact Keen Accruvance - We Reply Within a Day',
@@ -82,17 +92,16 @@ const ROUTE_SEO = {
 }
 
 /* Homepage-section deep-links that render the FULL homepage DOM (not distinct
-   pages) - e.g. /how-it-works scrolls to that section of the homepage. They are
+   pages) - e.g. /why-invest scrolls to that section of the homepage. They are
    folded into "/" via canonical so they never compete as near-duplicates.
-   NB "/signup" is a real standalone page, so it is deliberately NOT here. */
+   NB "/signup", "/how-it-works" and "/features" are real standalone pages, so
+   they are deliberately NOT here. */
 const FOLD_TO_HOME = new Set([
   '/home',
-  '/how-it-works',
   '/why-invest',
   '/resources',
   '/security',
   '/testimonials',
-  '/features',
   '/faq',
   '/cta',
 ])
