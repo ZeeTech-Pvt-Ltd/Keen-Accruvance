@@ -19,21 +19,21 @@ const PILLARS = [
   {
     n: '01',
     icon: Radar,
-    title: 'See the market clearly',
+    title: 'See The Market Clearly',
     body: 'Our AI scans live data across major assets and surfaces what actually matters. Every signal arrives with context, so you understand the “why” behind a suggestion - not just a blinking alert.',
     chip: 'bg-mint text-pine',
   },
   {
     n: '02',
     icon: ShieldCheck,
-    title: 'Stay protected, by default',
+    title: 'Stay Protected, By Default',
     body: 'Encryption in transit and at rest, two-factor authentication from day one, and continuous account monitoring. Security is designed in from the ground up - not bolted on later.',
     chip: 'bg-peach text-coral-hover',
   },
   {
     n: '03',
     icon: Bot,
-    title: 'Automate the repetitive',
+    title: 'Automate The Repetitive',
     body: 'Turn your own rules into automated strategies that run while you sleep. No more staring at charts all day or second-guessing a move you missed.',
     chip: 'bg-forest/10 text-forest',
   },
@@ -42,22 +42,22 @@ const PILLARS = [
 const GUIDES = [
   {
     icon: Eye,
-    title: 'Honest by default',
+    title: 'Honest By Default',
     body: 'Clear risk messaging, transparent pricing and demo-first onboarding - you explore the platform before you ever fund it.',
   },
   {
     icon: ShieldCheck,
-    title: 'Security first',
+    title: 'Security First',
     body: 'Every account is protected with layered controls and two-factor authentication switched on from the very first log-in.',
   },
   {
     icon: Target,
-    title: 'You stay in control',
+    title: 'You Stay In Control',
     body: 'The AI advises and automation follows the rules you set. You remain the decision-maker at every step.',
   },
   {
     icon: Gauge,
-    title: 'Kept deliberately simple',
+    title: 'Kept Deliberately Simple',
     body: 'Powerful tools wrapped in a calm, uncluttered interface - so advanced trading never has to feel intimidating.',
   },
 ]
@@ -186,12 +186,12 @@ export default function AboutPage() {
               About us
             </p>
             <h1 className="text-balance mt-7 text-[2.6rem] font-semibold leading-[1.05] text-ink sm:text-[50px] sm:leading-[1.04]">
-              A calmer way to trade.
+              A Calmer Way To Trade.
               <br />
               <span className="italic">
-                Powered by{' '}
+                Powered By{' '}
                 <span className="bg-gradient-to-r from-forest-soft via-forest to-pine bg-clip-text text-transparent">
-                  intelligent technology.
+                  Intelligent Technology.
                 </span>
               </span>
             </h1>
@@ -232,7 +232,7 @@ export default function AboutPage() {
           <div>
             <p className="eyebrow text-gold-deep">Our story</p>
             <h2 className="mt-5 text-3xl font-semibold leading-[1.08] text-ink sm:text-4xl">
-              Built for clarity in a market that never sleeps
+              Built For Clarity In A Market That Never Sleeps
             </h2>
           </div>
           <div className="space-y-5 leading-relaxed text-ink-muted">
@@ -263,7 +263,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow justify-center text-forest">What we stand on</p>
             <h2 className="mt-5 text-3xl font-semibold leading-[1.08] text-ink sm:text-4xl">
-              Three ideas shape everything we build
+              Three Ideas Shape Everything We Build
             </h2>
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
@@ -318,7 +318,7 @@ export default function AboutPage() {
             <div>
               <p className="eyebrow text-gold-deep">Our principles</p>
               <h2 className="mt-5 text-3xl font-semibold leading-[1.08] text-ink sm:text-4xl">
-                What guides us every day
+                What Guides Us Every Day
               </h2>
               <p className="mt-5 max-w-md leading-relaxed text-ink-muted">
                 These aren’t words on a wall. Every product decision - from how a signal is
@@ -352,7 +352,7 @@ export default function AboutPage() {
           <div className="relative mx-auto max-w-2xl">
             <p className="eyebrow justify-center text-gold">Get started</p>
             <h2 className="mt-5 text-3xl font-semibold leading-[1.08] text-white sm:text-4xl">
-              Ready for a calmer way to trade?
+              Ready For A Calmer Way To Trade?
             </h2>
             <p className="text-pretty mx-auto mt-4 max-w-xl text-[0.98rem] leading-relaxed text-mint/80">
               Open a free demo account in a few minutes and explore the platform - signals,

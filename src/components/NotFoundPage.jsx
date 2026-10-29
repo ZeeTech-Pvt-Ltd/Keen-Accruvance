@@ -27,7 +27,7 @@ export default function NotFoundPage() {
           </p>
 
           <h1 className="text-balance mt-2 text-3xl font-semibold leading-[1.08] text-ink sm:text-4xl">
-            This page has gone off the charts
+            This Page Has Gone Off The Charts
           </h1>
           <p className="text-pretty mx-auto mt-4 max-w-md text-base leading-relaxed text-ink-muted sm:text-lg">
             The page you’re looking for doesn’t exist, may have moved, or the link is

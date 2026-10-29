@@ -2,13 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import {
-  ShieldCheck,
-  ArrowRight,
-  Mail,
-  UserRound,
-  KeyRound,
-} from 'lucide-react'
+import { ShieldCheck, ArrowRight, Mail, UserRound } from 'lucide-react'
 import PhoneField from './PhoneField.jsx'
 import { getCountry } from '../data/countries.js'
 import { isPossiblePhoneNumber } from 'libphonenumber-js'
@@ -326,16 +320,6 @@ export default function LeadForm({
                 By continuing you agree to our <a href="/terms" className="font-medium text-forest underline decoration-forest/30 underline-offset-2 hover:decoration-forest">Terms &amp; Conditions</a>{' '}
                 and acknowledge our{' '}
                 <a href="/privacy" className="font-medium text-forest underline decoration-forest/30 underline-offset-2 hover:decoration-forest">Privacy Policy</a>.
-              </p>
-              <p className="mt-4 flex flex-col items-center gap-1 text-center text-[0.68rem] leading-relaxed text-ink-muted/60">
-                <span className="flex items-center gap-1.5">
-                  <ShieldCheck size={13} className="text-forest" aria-hidden="true" />
-                  Demo sign-up - your details are encrypted and never shared.
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <KeyRound size={13} className="text-forest" aria-hidden="true" />
-                  Two-factor authentication is on from day one.
-                </span>
               </p>
             </>
           ) : (

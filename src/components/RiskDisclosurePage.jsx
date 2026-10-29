@@ -2,7 +2,7 @@ import { Sparkles, MessageCircle } from 'lucide-react'
 
 const SECTIONS = [
   {
-    title: 'What this disclosure covers',
+    title: 'What This Disclosure Covers',
     body: (
       <>
         <p>
@@ -23,7 +23,7 @@ const SECTIONS = [
     ),
   },
   {
-    title: 'You can lose money',
+    title: 'You Can Lose Money',
     body: (
       <>
         <p>
@@ -36,7 +36,7 @@ const SECTIONS = [
     ),
   },
   {
-    title: 'Markets are volatile',
+    title: 'Markets Are Volatile',
     body: (
       <>
         <p>
@@ -49,7 +49,7 @@ const SECTIONS = [
     ),
   },
   {
-    title: 'Leverage amplifies both gains and losses',
+    title: 'Leverage Amplifies Both Gains And Losses',
     body: (
       <>
         <p>
@@ -62,7 +62,7 @@ const SECTIONS = [
     ),
   },
   {
-    title: 'AI signals and automation are not guarantees',
+    title: 'AI Signals And Automation Are Not Guarantees',
     body: (
       <>
         <p>
@@ -77,7 +77,7 @@ const SECTIONS = [
     ),
   },
   {
-    title: 'Past performance is not a reliable indicator',
+    title: 'Past Performance Is Not A Reliable Indicator',
     body: (
       <>
         <p>
@@ -90,7 +90,7 @@ const SECTIONS = [
     ),
   },
   {
-    title: 'Demo accounts are not live trading',
+    title: 'Demo Accounts Are Not Live Trading',
     body: (
       <>
         <p>
@@ -102,7 +102,7 @@ const SECTIONS = [
     ),
   },
   {
-    title: 'Not financial advice',
+    title: 'Not Financial Advice',
     body: (
       <>
         <p>
@@ -116,7 +116,7 @@ const SECTIONS = [
     ),
   },
   {
-    title: 'Check whether trading suits you',
+    title: 'Check Whether Trading Suits You',
     body: (
       <>
         <p>
@@ -129,7 +129,7 @@ const SECTIONS = [
     ),
   },
   {
-    title: 'Tax, regulation and platform risks',
+    title: 'Tax, Regulation And Platform Risks',
     body: (
       <>
         <p>
@@ -143,7 +143,7 @@ const SECTIONS = [
     ),
   },
   {
-    title: 'Your responsibility',
+    title: 'Your Responsibility',
     body: (
       <>
         <p>
@@ -203,7 +203,7 @@ export default function RiskDisclosurePage() {
         <section className="mt-6 rounded-2xl border border-ink/[0.06] bg-paper p-7 shadow-[0_1px_2px_rgba(16,24,23,0.04)] sm:p-8">
           <h2 className="flex items-center gap-2.5 text-lg font-semibold text-ink">
             <MessageCircle size={19} className="text-forest" aria-hidden="true" />
-            Questions about risk?
+            Questions About Risk?
           </h2>
           <p className="mt-3 text-[0.95rem] leading-relaxed text-ink-muted">
             If any part of this disclosure is unclear, or you would like more detail about a

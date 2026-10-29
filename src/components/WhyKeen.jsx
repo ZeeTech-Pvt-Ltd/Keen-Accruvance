@@ -5,37 +5,37 @@ import Reveal from './Reveal.jsx'
 const REASONS = [
   {
     icon: Radar,
-    title: 'Real-time market intelligence',
+    title: 'Real-Time Market Intelligence',
     body: 'Live prices, momentum and AI readouts keep you aligned with the market as it moves.',
     tint: 'bg-forest/10 text-forest',
   },
   {
     icon: SlidersHorizontal,
-    title: 'Automated trading tools',
+    title: 'Automated Trading Tools',
     body: 'Define your rules and risk once - strategies then run around the clock, on your terms.',
     tint: 'bg-gold/15 text-gold-deep',
   },
   {
     icon: Eye,
-    title: 'Transparent experience',
+    title: 'Transparent Experience',
     body: 'Clear fees, a full order history and readable reasoning behind every AI signal.',
     tint: 'bg-mint text-pine',
   },
   {
     icon: MonitorSmartphone,
-    title: 'Multi-device accessibility',
+    title: 'Multi-Device Accessibility',
     body: 'Start on desktop, check in from your phone - your portfolio stays in perfect sync.',
     tint: 'bg-coral/10 text-coral-hover',
   },
   {
     icon: ShieldCheck,
-    title: 'Security-focused infrastructure',
+    title: 'Security-Focused Infrastructure',
     body: 'Encryption, two-factor authentication and continuous monitoring on every session.',
     tint: 'bg-forest/10 text-forest',
   },
   {
     icon: Sprout,
-    title: 'Beginner-friendly interface',
+    title: 'Beginner-Friendly Interface',
     body: 'Guided onboarding and clean tools make advanced trading approachable at any level.',
     tint: 'bg-peach text-coral-hover',
   },
@@ -51,7 +51,7 @@ export default function WhyKeen() {
       <div className="wrap">
         <SectionHeading
           eyebrow="Why Keen Accruvance"
-          title="Built for Smarter, More Confident Trading"
+          title="Built For Smarter, More Confident Trading"
           lead="Confidence comes from clarity - knowing what the market is doing, why your strategy is acting, and that your account is protected. That is exactly what we focus on."
         />
 

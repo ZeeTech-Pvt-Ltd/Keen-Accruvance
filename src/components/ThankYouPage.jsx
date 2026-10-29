@@ -23,10 +23,10 @@ export default function ThankYouPage() {
   const name = sub && sub.firstName ? sub.firstName : ''
   const isContact = sub && sub.type === 'contact'
   const title = !sub
-    ? 'Thanks for stopping by'
+    ? 'Thanks For Stopping By'
     : isContact
-      ? 'Message sent - we’ll be in touch'
-      : 'Your demo account is on its way'
+      ? 'Message Sent - We’ll Be In Touch'
+      : 'Your Demo Account Is On Its Way'
   const eyebrow = !sub ? 'Welcome' : isContact ? 'Message received' : 'You’re all set'
   const body = !sub ? (
     <>

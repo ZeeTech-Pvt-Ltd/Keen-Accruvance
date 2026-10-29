@@ -9,7 +9,7 @@ const SECTIONS = [
   },
   {
     n: '02',
-    title: 'Information we collect',
+    title: 'Information We Collect',
     body: [
       'Account details - your name, email address, phone number and country when you sign up or request access.',
       'Usage information - pages you view, device and browser type, approximate location and how you interact with the platform, collected to improve our services.',
@@ -19,7 +19,7 @@ const SECTIONS = [
   },
   {
     n: '03',
-    title: 'How we use your information',
+    title: 'How We Use Your Information',
     body: [
       'To create and manage your account, verify your identity and keep your account secure with two-factor authentication.',
       'To operate, maintain and improve the platform, including monitoring for fraudulent or suspicious activity.',
@@ -29,7 +29,7 @@ const SECTIONS = [
   },
   {
     n: '04',
-    title: 'Sharing and disclosure',
+    title: 'Sharing And Disclosure',
     body: [
       'We do not sell your personal information. We only share it with trusted service providers who help us run the platform (such as email and infrastructure providers) and who are bound by confidentiality obligations.',
       'We may disclose information where required or permitted by law, or to protect the rights, property or safety of our users and the public.',
@@ -37,7 +37,7 @@ const SECTIONS = [
   },
   {
     n: '05',
-    title: 'Data security and retention',
+    title: 'Data Security And Retention',
     body: [
       'We apply encryption in transit and at rest, role-based access controls and two-factor authentication to help protect your information.',
       'We keep personal information only for as long as needed to provide our services and meet legal obligations, and we delete or de-identify it when it is no longer required.',
@@ -46,7 +46,7 @@ const SECTIONS = [
   },
   {
     n: '06',
-    title: 'Cookies and analytics',
+    title: 'Cookies And Analytics',
     body: [
       'We use cookies and similar technologies to keep the site secure, remember your preferences and understand how the platform is used.',
       'You can control or delete cookies through your browser settings. Disabling some cookies may affect how the site functions.',
@@ -54,7 +54,7 @@ const SECTIONS = [
   },
   {
     n: '07',
-    title: 'Your rights and choices',
+    title: 'Your Rights And Choices',
     body: [
       'You may request access to, or correction of, the personal information we hold about you at any time. You can also ask us to delete your account and data.',
       'To make a request, email us at support@keen-accruvance.com. We will respond within a reasonable time and, where required, within 30 days.',
@@ -62,21 +62,21 @@ const SECTIONS = [
   },
   {
     n: '08',
-    title: 'International transfers',
+    title: 'International Transfers',
     body: [
       'As an Australian-based service, some of the service providers we use may process data in other countries. Where this happens we take reasonable steps to ensure your information is handled to a standard comparable to Australian law.',
     ],
   },
   {
     n: '09',
-    title: 'Children’s privacy',
+    title: 'Children’s Privacy',
     body: [
       'Our platform is not directed to anyone under 18 and we do not knowingly collect personal information from children. If you believe a child has provided us with information, please contact us so we can remove it.',
     ],
   },
   {
     n: '10',
-    title: 'Changes to this policy',
+    title: 'Changes To This Policy',
     body: [
       'We may update this Privacy Policy from time to time. When we make material changes we will update the date below and, where appropriate, notify you by email or through the platform.',
     ],
@@ -118,7 +118,7 @@ export default function PrivacyPage() {
         </div>
 
         <div className="mt-6 rounded-2xl border border-forest/15 bg-mint/50 p-6 sm:p-8">
-          <h2 className="text-lg font-semibold text-pine">Contact us</h2>
+          <h2 className="text-lg font-semibold text-pine">Contact Us</h2>
           <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-muted">
             Questions about this policy or your data? Email{' '}
             <a href="mailto:support@keen-accruvance.com" className="font-semibold text-forest underline decoration-forest/30 underline-offset-2">

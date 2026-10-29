@@ -9,7 +9,7 @@ export default function Features() {
       <div className="wrap">
         <SectionHeading
           eyebrow="Capabilities"
-          title="Technology that works while the markets work"
+          title="Technology That Works While The Markets Work"
           lead="Three pillars come together in one platform - intelligence to see clearly, automation to act consistently, and security to keep it all safe."
         />
 

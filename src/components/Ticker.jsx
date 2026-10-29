@@ -1,5 +1,3 @@
-import { Activity } from 'lucide-react'
-
 const MARKETS = [
   { t: 'BTC / USD', p: '67,842', c: 2.42 },
   { t: 'ETH / USD', p: '3,412.60', c: 1.18 },
@@ -20,10 +18,10 @@ function Row({ hidden }) {
         const up = m.c >= 0
         return (
           <span key={m.t} className="flex items-center gap-2.5 px-7 font-mono text-[0.72rem]">
-            <span className="font-semibold uppercase tracking-wider text-ink">{m.t}</span>
-            <span className="tnum text-ink-muted">{m.p}</span>
+            <span className="font-semibold uppercase tracking-wider text-white">{m.t}</span>
+            <span className="tnum text-mint/70">{m.p}</span>
             <span
-              className={`tnum inline-flex items-center gap-1 font-semibold ${up ? 'text-forest' : 'text-coral'}`}
+              className={`tnum inline-flex items-center gap-1 font-semibold ${up ? 'text-mint' : 'text-coral'}`}
             >
               <span className="text-[0.6rem]" aria-hidden="true">
                 {up ? '▲' : '▼'}
@@ -42,16 +40,8 @@ function Row({ hidden }) {
 /** Seamless marquee of sample market prices - decorative, illustrative data. */
 export default function Ticker() {
   return (
-    <div className="relative border-b border-ink/[0.06] bg-paper/70 backdrop-blur-sm">
+    <div className="relative border-b border-white/10 bg-ink">
       <div className="group relative flex items-center overflow-hidden py-3">
-        {/* live label */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 flex items-center bg-gradient-to-r from-cream via-cream/90 to-transparent pl-5 pr-14 sm:pl-8">
-          <span className="flex items-center gap-2 font-mono text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-ink">
-            <Activity size={13} className="text-forest" aria-hidden="true" />
-            Live
-          </span>
-        </div>
-
         {/* marquee */}
         <div className="flex w-max animate-ticker items-center group-hover:[animation-play-state:paused]">
           <Row />

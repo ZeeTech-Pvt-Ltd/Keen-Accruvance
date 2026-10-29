@@ -5,31 +5,31 @@ import Reveal from './Reveal.jsx'
 const VALUES = [
   {
     icon: Bot,
-    title: 'AI-powered trading',
+    title: 'AI-Powered Trading',
     body: 'Models scan market data and surface patterns, so opportunities are easier to spot - and easier to understand.',
     chip: 'bg-forest/10 text-forest',
   },
   {
     icon: Radar,
-    title: 'Real-time market insights',
+    title: 'Real-Time Market Insights',
     body: 'Live signals and clear context across major assets help you follow what is moving, as it moves.',
     chip: 'bg-mint text-pine',
   },
   {
     icon: Workflow,
-    title: 'Automated strategies',
+    title: 'Automated Strategies',
     body: 'Define your rules once and let automation execute trades on your behalf - without watching the screen all day.',
     chip: 'bg-gold/15 text-gold-deep',
   },
   {
     icon: ShieldCheck,
-    title: 'Secure by design',
+    title: 'Secure By Design',
     body: 'Encryption, layered account protection and round-the-clock monitoring guard your account at every stage.',
     chip: 'bg-peach text-coral-hover',
   },
   {
     icon: MousePointerClick,
-    title: 'Easy-to-use interface',
+    title: 'Easy-To-Use Interface',
     body: 'A calm, uncluttered dashboard that makes advanced trading tools feel approachable from day one.',
     chip: 'bg-cream-deep text-ink',
   },
@@ -44,7 +44,7 @@ export default function About() {
           <SectionHeading
             align="left"
             eyebrow="About us"
-            title="Intelligent Trading Without the Complexity"
+            title="Intelligent Trading Without The Complexity"
             lead="Markets today are fast, noisy and always on. Keen Accruvance was built to cut through the noise - pairing capable AI with a clean, human-friendly platform so smarter trading decisions don't require a finance degree or a screen obsession."
           />
           <Reveal delay={120}>
@@ -57,8 +57,18 @@ export default function About() {
           </Reveal>
           <Reveal delay={200}>
             <div className="mt-9 inline-flex items-center gap-4 rounded-2xl border border-forest/10 bg-paper px-5 py-4 shadow-sm">
-              <span className="grid size-11 place-items-center rounded-full bg-gradient-to-br from-forest to-pine text-white shadow-[0_8px_18px_-8px_rgba(8,122,91,0.9)]">
-                <span className="font-display text-base font-bold">K</span>
+              <span className="grid size-11 shrink-0 place-items-center rounded-full bg-gradient-to-br from-forest to-pine text-white shadow-[0_8px_18px_-8px_rgba(8,122,91,0.9)]">
+                <svg viewBox="0 0 24 24" className="size-5" aria-hidden="true">
+                  <path
+                    d="M4 16.5 9.5 11l3.5 3 7-8.5"
+                    fill="none"
+                    stroke="#fff"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <circle cx="20" cy="5.5" r="1.6" fill="#EFB85C" />
+                </svg>
               </span>
               <p className="text-sm leading-snug text-ink-muted">
                 <span className="font-semibold text-ink">One platform, one focus:</span>{' '}

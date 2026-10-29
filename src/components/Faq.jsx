@@ -59,7 +59,7 @@ export default function Faq() {
           <SectionHeading
             align="left"
             eyebrow="FAQ"
-            title="Questions, answered plainly"
+            title="Questions, Answered Plainly"
             lead="Everything you might want to know before getting started. If it is not here, our team is one message away."
           />
           <Reveal delay={140}>

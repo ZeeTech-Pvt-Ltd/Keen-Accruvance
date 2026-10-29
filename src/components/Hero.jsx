@@ -94,6 +94,15 @@ function PhoneMock() {
               </span>
             </p>
             <div className="divide-y divide-ink/[0.04] rounded-2xl border border-ink/[0.04] bg-paper/70 p-1.5">
+              <div className="flex items-center justify-between px-1.5 pb-1 pt-0.5">
+                <span className="font-mono text-[0.55rem] font-semibold uppercase tracking-[0.14em] text-ink-muted/80">
+                  Live trading
+                </span>
+                <span className="flex items-center gap-1 text-[0.55rem] font-semibold uppercase tracking-wide text-forest">
+                  <span className="size-1.5 animate-pulse-dot rounded-full bg-forest" aria-hidden="true" />
+                  Open
+                </span>
+              </div>
               <CoinRow ticker="BTC" name="Bitcoin" data={sparkBtc} change={2.4} />
               <CoinRow ticker="ETH" name="Ethereum" data={sparkEth} change={1.1} />
               <CoinRow ticker="SOL" name="Solana" data={sparkSol} change={-0.6} />
@@ -172,7 +181,7 @@ export default function Hero() {
               Smarter Trading.
               <br />
               <span className="italic">
-                Powered by{' '}
+                Powered By{' '}
                 <span className="bg-gradient-to-r from-forest-soft via-forest to-pine bg-clip-text text-transparent">
                   AI.
                 </span>
@@ -193,9 +202,6 @@ export default function Hero() {
             <div className="mt-9 flex flex-wrap items-center gap-3.5">
               <Button href="/signup" size="lg" arrow>
                 Get Started
-              </Button>
-              <Button href="/resources" size="lg" variant="outline">
-                Explore Platform
               </Button>
             </div>
           </Reveal>
@@ -223,46 +229,6 @@ export default function Hero() {
               aria-hidden="true"
               className="absolute left-1/2 top-1/2 -z-10 aspect-square w-[125%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-forest/15"
             />
-            {/* floating AI signal card */}
-            <div className="absolute -left-2 top-2 z-10 hidden animate-float items-center gap-2.5 rounded-2xl border border-white/60 bg-paper/85 p-3 pr-4 shadow-card backdrop-blur sm:flex lg:-left-6 lg:top-6">
-              <span className="relative grid size-9 place-items-center rounded-xl bg-forest/10 text-forest">
-                <Bot size={18} />
-                <span className="absolute -right-1 -top-1 size-2.5 animate-pulse-dot rounded-full bg-forest ring-2 ring-paper" />
-              </span>
-              <span className="leading-tight">
-                <span className="block text-[0.8rem] font-semibold text-ink">AI signal · Buy momentum</span>
-                <span className="block text-[0.7rem] text-ink-muted">BTC - confidence 92%</span>
-              </span>
-            </div>
-
-            {/* floating 24/7 pill */}
-            <div
-              className="absolute -right-1 top-24 z-10 hidden animate-float-slow items-center gap-2 rounded-full border border-white/60 bg-paper/85 py-2 pl-2.5 pr-4 shadow-card backdrop-blur sm:flex lg:-right-4 lg:top-28"
-              style={{ animationDelay: '1.6s' }}
-            >
-              <span className="grid size-7 place-items-center rounded-full bg-gold/15 text-gold-deep">
-                <Clock3 size={14} />
-              </span>
-              <span className="text-[0.78rem] font-semibold text-ink">
-                24/7 <span className="font-medium text-ink-muted">trading access</span>
-              </span>
-            </div>
-
-            {/* floating P/L card */}
-            <div
-              className="absolute bottom-6 right-0 z-10 hidden animate-float-slower rounded-2xl border border-white/60 bg-paper/85 p-3 pr-4 shadow-card backdrop-blur sm:block lg:-right-7"
-              style={{ animationDelay: '0.9s' }}
-            >
-              <div className="flex items-center gap-3">
-                <span className="grid size-9 place-items-center rounded-xl bg-forest/10 text-forest">
-                  <Activity size={18} />
-                </span>
-                <span className="leading-tight">
-                  <span className="block text-[0.7rem] text-ink-muted">30-day performance</span>
-                  <span className="tnum block text-[0.95rem] font-bold text-forest">+8.4%</span>
-                </span>
-              </div>
-            </div>
 
             <PhoneMock />
           </div>

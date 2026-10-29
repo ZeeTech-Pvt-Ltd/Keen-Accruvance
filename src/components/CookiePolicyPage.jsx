@@ -1,7 +1,7 @@
 const SECTIONS = [
   {
     n: '01',
-    title: 'What are cookies',
+    title: 'What Are Cookies',
     body: [
       'A cookie is a small text file stored on your device when you visit a website. It lets the site recognise your browser and remember information between visits - such as your preferences or whether you are signed in.',
       'We also use similar technologies such as local storage and analytics pixels for the same kinds of purposes described in this policy. Where we say “cookies” below, we mean all of these.',
@@ -9,7 +9,7 @@ const SECTIONS = [
   },
   {
     n: '02',
-    title: 'The cookies we use',
+    title: 'The Cookies We Use',
     body: [
       'Essential cookies - required for the site to function, such as keeping your session secure and remembering basic preferences. These cannot be switched off.',
       'Preference cookies - remember choices you make, such as language, region and display settings, so you don’t have to set them again on every visit.',
@@ -18,7 +18,7 @@ const SECTIONS = [
   },
   {
     n: '03',
-    title: 'Why we use them',
+    title: 'Why We Use Them',
     body: [
       'To keep the site secure and to help protect accounts and services from abuse or fraudulent activity.',
       'To remember your preferences and provide a consistent experience across visits.',
@@ -28,7 +28,7 @@ const SECTIONS = [
   },
   {
     n: '04',
-    title: 'Third-party cookies',
+    title: 'Third-party Cookies',
     body: [
       'Some of the tools we rely on - such as analytics and infrastructure providers - may set their own cookies or similar technologies when you use the site.',
       <span key="privacy-link">
@@ -44,7 +44,7 @@ const SECTIONS = [
   },
   {
     n: '05',
-    title: 'Managing and deleting cookies',
+    title: 'Managing And Deleting Cookies',
     body: [
       'You can control or delete cookies through your browser settings. Most browsers let you block third-party cookies, clear cookies when you close the browser, or ask before a site sets one.',
       'Disabling essential cookies may stop parts of the site from working correctly. Disabling analytics cookies will not affect how the site functions for you.',
@@ -52,7 +52,7 @@ const SECTIONS = [
   },
   {
     n: '06',
-    title: 'Your consent',
+    title: 'Your Consent',
     body: [
       'By continuing to use the Keen Accruvance website after being shown this policy, you consent to our use of cookies as described here.',
       'You can change your preferences at any time using your browser’s cookie controls, as set out in the section above.',
@@ -60,7 +60,7 @@ const SECTIONS = [
   },
   {
     n: '07',
-    title: 'Changes to this policy',
+    title: 'Changes To This Policy',
     body: [
       'We may update this Cookie Policy from time to time to reflect changes in the cookies we use, the law, or the way the site operates. When we do, we will update the date shown at the top of this page.',
     ],
@@ -102,7 +102,7 @@ export default function CookiePolicyPage() {
         </div>
 
         <div className="mt-6 rounded-2xl border border-forest/15 bg-mint/50 p-6 sm:p-8">
-          <h2 className="text-lg font-semibold text-pine">Questions about cookies?</h2>
+          <h2 className="text-lg font-semibold text-pine">Questions About Cookies?</h2>
           <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-muted">
             If anything in this policy is unclear, or you would like to know more about the cookies
             we use, email{' '}

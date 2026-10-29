@@ -11,7 +11,7 @@ export default function HowItWorks() {
       <div className="wrap">
         <SectionHeading
           eyebrow="How it works"
-          title="From sign-up to strategy in three simple steps"
+          title="From Sign-Up To Strategy In Three Simple Steps"
           lead="No jargon, no paperwork, no steep learning curve. Get a working setup in the time it takes to make a coffee."
         />
 

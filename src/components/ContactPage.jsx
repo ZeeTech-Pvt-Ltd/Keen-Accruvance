@@ -4,18 +4,18 @@ import LeadForm from './LeadForm.jsx'
 const WAYS = [
   {
     icon: Mail,
-    title: 'Email us',
+    title: 'Email Us',
     body: 'support@keen-accruvance.com - for account help, platform questions or anything else.',
     href: 'mailto:support@keen-accruvance.com',
   },
   {
     icon: Clock3,
-    title: 'Fast replies',
+    title: 'Fast Replies',
     body: 'Our team responds to every message within one business day, 7 days a week.',
   },
   {
     icon: Globe2,
-    title: 'Here for you worldwide',
+    title: 'Here For You Worldwide',
     body: 'Headquartered in Australia, supporting traders across 98+ countries.',
   },
 ]
@@ -39,8 +39,8 @@ export default function ContactPage() {
               Contact us
             </p>
             <h1 className="mt-6 text-4xl font-semibold leading-[1.05] text-ink sm:text-5xl">
-              Talk to a real person -{' '}
-              <span className="italic text-forest">we reply fast.</span>
+              Talk To A Real Person -{' '}
+              <span className="italic text-forest">We Reply Fast.</span>
             </h1>
             <p className="text-pretty mx-auto mt-5 max-w-xl text-base leading-relaxed text-ink-muted sm:text-lg">
               Questions about your account, the platform or anything in between? Drop us a
@@ -57,7 +57,7 @@ export default function ContactPage() {
           <div>
             <p className="eyebrow text-gold-deep">Get in touch</p>
             <h2 className="mt-5 text-3xl font-semibold leading-[1.08] text-ink sm:text-4xl">
-              We’re here when you need us
+              We’re Here When You Need Us
             </h2>
 
             <div className="mt-8 space-y-4">

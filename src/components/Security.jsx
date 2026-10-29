@@ -106,7 +106,7 @@ export default function Security() {
                   Security
                 </p>
                 <h2 className="text-balance mt-5 text-3xl font-bold leading-[1.08] text-white sm:text-4xl lg:text-[2.8rem]">
-                  Security at Every Step
+                  Security At Every Step
                 </h2>
                 <p className="text-pretty mt-5 max-w-xl text-base leading-relaxed text-mint/80 sm:text-lg">
                   Your account, data and funds sit behind layered, defence-in-depth

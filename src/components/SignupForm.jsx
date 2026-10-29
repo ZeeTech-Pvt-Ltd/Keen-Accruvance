@@ -26,8 +26,8 @@ export default function SignupForm({ sectionId = 'signup' }) {
               Get started
             </p>
             <h2 className="text-balance mt-5 text-[2.1rem] font-semibold leading-[1.06] text-ink sm:text-5xl sm:leading-[1.03] lg:text-[3rem]">
-              Open your account -{' '}
-              <span className="italic text-forest">in a few minutes.</span>
+              Open Your Account -{' '}
+              <span className="italic text-forest">In A Few Minutes.</span>
             </h2>
             <p className="text-pretty mt-5 text-base leading-relaxed text-ink-muted sm:text-lg">
               Opening an account takes only a few minutes. Tell us who you are, and
