@@ -94,6 +94,7 @@ export function Spark({
   id,
   className = '',
   role = 'img',
+  fit = false,
 }) {
   const uid = useId()
   const gid = id || `g-${uid.replace(/[:]/g, '')}`
@@ -103,7 +104,13 @@ export function Spark({
   const area = `${line} L ${last[0].toFixed(2)} ${h} L ${pts[0][0].toFixed(2)} ${h} Z`
 
   return (
-    <svg viewBox={`0 0 ${w} ${h}`} className={`h-auto w-full ${className}`} role={role} aria-hidden={role !== 'img'}>
+    <svg
+      viewBox={`0 0 ${w} ${h}`}
+      preserveAspectRatio={fit ? 'none' : 'xMidYMid meet'}
+      className={`${fit ? 'h-full' : 'h-auto'} w-full ${className}`}
+      role={role}
+      aria-hidden={role !== 'img'}
+    >
       {grid &&
         [0.25, 0.5, 0.75].map((t) => (
           <line

@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react'
 import {
   Wallet,
   TrendingUp,
-  TrendingDown,
   Bot,
   Activity,
   Lock,
@@ -52,15 +51,6 @@ const SIGNALS = [
     confidence: 76,
     time: '2 min ago',
   },
-  {
-    icon: TrendingDown,
-    tone: 'text-coral bg-coral/10',
-    title: 'Momentum easing',
-    market: 'SOL/USD',
-    note: 'Volume declining, take-profit risk level raised',
-    confidence: 61,
-    time: '8 min ago',
-  },
 ]
 
 /* Re-render on a short interval so the readouts move like a live feed. */
@@ -96,7 +86,7 @@ function MarketRow({ row, tick }) {
   const up = change >= 0
 
   return (
-    <div className="grid grid-cols-[1.1fr_1fr_auto] items-center gap-3 px-4 py-3 sm:grid-cols-[1.6fr_1fr_0.8fr_0.7fr_auto] sm:px-5">
+    <div className="grid grid-cols-[1.1fr_1fr_auto] items-center gap-3 px-4 py-2.5 sm:grid-cols-[1.6fr_1fr_0.8fr_0.7fr_auto] sm:px-5">
       <div className="flex items-center gap-3">
         <span className={`grid size-8 shrink-0 place-items-center rounded-full text-[0.7rem] font-bold ${m.chip}`}>
           {m.letter}
@@ -169,10 +159,10 @@ function BrowserWindow() {
       </div>
 
       {/* app body */}
-      <div className="bg-[#fbfaf6] p-4 sm:p-6 lg:p-7">
-        <div className="grid gap-5 lg:grid-cols-[1.65fr_1fr]">
+      <div className="bg-[#fbfaf6] p-3 sm:p-4 lg:p-5">
+        <div className="grid gap-3 lg:grid-cols-[1.65fr_1fr]">
           {/* portfolio */}
-          <div className="rounded-2xl border border-ink/[0.05] bg-paper p-5 sm:p-6">
+          <div className="flex flex-col rounded-2xl border border-ink/[0.05] bg-paper p-4 sm:p-5">
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
                 <p className="flex items-center gap-2 text-[0.78rem] font-medium text-ink-muted">
@@ -182,7 +172,7 @@ function BrowserWindow() {
                     Sample
                   </span>
                 </p>
-                <p className="tnum mt-1.5 font-sans text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+                <p className="tnum mt-1.5 font-sans text-2xl font-bold tracking-tight text-ink sm:text-3xl">
                   ${money(portfolio, 2)}
                 </p>
               </div>
@@ -192,8 +182,8 @@ function BrowserWindow() {
               </div>
             </div>
 
-            <div className="relative mt-5">
-              <Spark data={seriesTrendUp} w={760} h={220} stroke="#0e8f6c" dot grid className="w-full" />
+            <div className="relative mt-4 min-h-[140px] flex-1">
+              <Spark data={seriesTrendUp} w={760} h={220} stroke="#0e8f6c" dot grid fit />
               <span className="absolute left-4 top-3 inline-flex items-center gap-1.5 rounded-full border border-forest/15 bg-paper/90 px-2.5 py-1 text-[0.7rem] font-semibold text-forest shadow-sm backdrop-blur">
                 <Bot size={12} aria-hidden="true" /> AI trend · upward bias
               </span>
@@ -204,7 +194,7 @@ function BrowserWindow() {
           </div>
 
           {/* AI signals */}
-          <div className="flex flex-col rounded-2xl border border-ink/[0.05] bg-paper p-5 sm:p-6">
+          <div className="flex flex-col rounded-2xl border border-ink/[0.05] bg-paper p-4 sm:p-5">
             <div className="flex items-center justify-between">
               <h3 className="font-sans text-[0.95rem] font-semibold text-ink">AI Trading Signals</h3>
               <span className="flex items-center gap-1.5 text-[0.7rem] font-medium text-forest">
@@ -213,13 +203,13 @@ function BrowserWindow() {
             </div>
             <p className="text-[0.76rem] text-ink-muted">Auto-refreshing market readouts</p>
 
-            <ul className="mt-4 flex flex-1 flex-col gap-3">
+            <ul className="mt-4 flex flex-1 flex-col gap-2.5">
               {SIGNALS.map((s, i) => {
                 const confidence = Math.round(s.confidence + wave(tick, i * 1.3) * 2)
                 return (
                   <li
                     key={s.title}
-                    className="group flex items-start gap-3 rounded-2xl border border-ink/[0.04] bg-cream/60 p-3.5 transition-all duration-200 hover:border-forest/15 hover:bg-mint/40"
+                    className="group flex items-start gap-3 rounded-2xl border border-ink/[0.04] bg-cream/60 p-3 transition-all duration-200 hover:border-forest/15 hover:bg-mint/40"
                   >
                     <span className={`grid size-9 shrink-0 place-items-center rounded-xl ${s.tone}`}>
                       <s.icon size={16} strokeWidth={2.2} aria-hidden="true" />
@@ -244,15 +234,11 @@ function BrowserWindow() {
               })}
             </ul>
 
-            <p className="mt-4 flex items-center gap-2 rounded-xl bg-gradient-to-r from-forest to-pine px-3.5 py-3 text-[0.74rem] font-medium text-mint/90">
-              <Bot size={14} className="shrink-0 text-white" aria-hidden="true" />
-              Auto-trader active on ETH strategy · risk limits set
-            </p>
           </div>
         </div>
 
         {/* lower grid: market overview + P&L */}
-        <div className="mt-5 grid gap-5 lg:grid-cols-[1.65fr_1fr]">
+        <div className="mt-3 grid gap-3 lg:grid-cols-[1.65fr_1fr]">
           <div className="rounded-2xl border border-ink/[0.05] bg-paper">
             <div className="flex items-center justify-between px-5 pb-2 pt-5 sm:px-6">
               <div>
@@ -267,7 +253,7 @@ function BrowserWindow() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-ink/[0.05] bg-paper p-5 sm:p-6">
+          <div className="rounded-2xl border border-ink/[0.05] bg-paper p-4 sm:p-5">
             <div className="flex items-center justify-between">
               <h3 className="font-sans text-[0.95rem] font-semibold text-ink">Profit &amp; Loss</h3>
               <span className="text-[0.68rem] font-medium text-ink-muted/80">trailing 12 months</span>
